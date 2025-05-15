@@ -80,4 +80,11 @@ Thumbs.db
 
 # track these mu-plugins, plugins, and themes
 # add your own entries here
+#ignore unnecessary assets file
+wp-content/themes/homeConstructionTheme/assets/font-icons/
+wp-content/themes/homeConstructionTheme/assets/fonts/
+wp-content/themes/homeConstructionTheme/assets/img/
+wp-content/themes/homeConstructionTheme/assets/imgs/
+wp-content/themes/homeConstructionTheme/assets/home/vendor/
+
 !wp-content/themes/homeConstructiontheme/

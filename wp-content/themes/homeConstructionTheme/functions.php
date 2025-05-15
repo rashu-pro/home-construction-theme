@@ -141,6 +141,9 @@ function home_construction_theme_scripts() {
 	wp_enqueue_style( 'home-construction-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'home-construction-theme-style', 'rtl', 'replace' );
 
+    wp_enqueue_style('html-template-default-style', get_template_directory_uri()."/assets/css/default.css", array(), _S_VERSION);
+    wp_enqueue_style('custom-style', get_template_directory_uri()."/assets/css/custom.css", array(), _S_VERSION);
+
 	wp_enqueue_script( 'home-construction-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
