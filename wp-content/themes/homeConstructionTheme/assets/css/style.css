@@ -340,7 +340,7 @@ background-size: cover;
 .tab-pane h3 {
 margin-top: 0;
 font-weight: 600;
-font-weight: 18px;
+font-size: 18px;
 }
 .tab-pane p {
 font-size: 15px;
@@ -2384,7 +2384,8 @@ color: #FFFFFF;
 border-bottom: 3px solid #ff7200;
 padding: 10px 15px;
 margin-left: 0;
-font-size:13px -webkit-transition: opacity 0.4s ease-in-out;
+font-size:13px;
+    -webkit-transition: opacity 0.4s ease-in-out;
 -moz-transition: opacity 0.4s ease-in-out;
 -ms-transition: opacity 0.4s ease-in-out;
 -o-transition: opacity 0.4s ease-in-out;
@@ -2818,9 +2819,6 @@ right:0;
 color:#FFFFFF;
 font-weight:600;
 font-size:16px
-}
-.dropdown-menu {
-min-height:80px
 }
 .dropdown-menu a {
 display:block;
@@ -3562,7 +3560,6 @@ font-size:11px;
 }
 .blog-page-grid .img-cont {
 min-height:200px;
-max-height:200
 }
 .blog-page-grid .continue {
 background: #00274D

@@ -115,77 +115,18 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="pull-left fixed-menu-logo"><a href="index.html" title="Home"><img
-                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" alt=""/></a></div>
+                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png"
+                                        alt=""/></a></div>
+
                         <nav class="navbar navbar-expand-sm navbar-left">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle"
-                                                                        data-bs-toggle="dropdown" href="#" role="button"
-                                                                        aria-haspopup="true" aria-expanded="false">
-                                        Home </a>
-                                    <div class="dropdown-menu"><a href="index.html" class="dropdown-item">Home v1</a> <a
-                                                href="index-2.html" class="dropdown-item">Home v2</a> <a
-                                                href="index-3.html" class="dropdown-item">Home v3</a> <a
-                                                href="https://www.creativethemes.co.in/buy-creativetheme-html-template/architevo-builder/template-onepage/index.html"
-                                                class="dropdown-item">One Page Template</a></div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false"> About </a>
-                                    <div class="dropdown-menu"><a href="about.html" class="nav-link">About Us</a> <a
-                                                href="about-2.html" class="nav-link">About Us V2</a></div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false">
-                                        Services </a>
-                                    <div class="dropdown-menu"><a href="services.html"
-                                                                  class="dropdown-item">Services</a> <a
-                                                href="services-2.html" class="dropdown-item">Services V2</a> <a
-                                                href="service-details.html" class="dropdown-item">Services Details</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false">
-                                        Projects </a>
-                                    <div class="dropdown-menu"><a class="dropdown-item"
-                                                                  href="projects.html">Projects</a> <a
-                                                class="dropdown-item" href="projects-2.html">Projects V2</a> <a
-                                                class="dropdown-item" href="projects-lightbox.html">Projects Lighbox</a>
-                                        <a class="dropdown-item" href="projects-lightbox-description.html">Projects
-                                            Lighbox Description</a> <a class="dropdown-item"
-                                                                       href="project-details.html">Projects Details</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false"> Pages </a>
-                                    <div class="dropdown-menu"><a href="coming-soon.html" class="dropdown-item">Coming
-                                            Soon</a> <a href="page-not-found.html" class="dropdown-item">Page Not
-                                            Found</a> <a href="faq.html" class="dropdown-item">FAQ</a> <a
-                                                href="privacy.html" class="dropdown-item">Privacy</a> <a
-                                                href="support.html" class="dropdown-item">Support</a></div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false"> Blog </a>
-                                    <div class="dropdown-menu"><a class="dropdown-item" href="blogs.html">Blogs</a> <a
-                                                class="dropdown-item" href="blogs-grid-1.html">Blogs Grid</a> <a
-                                                class="dropdown-item" href="blogs-grid-2.html">Blogs Grid V2</a> <a
-                                                class="dropdown-item" href="blogs-3.html">Blogs Left Sidebar</a> <a
-                                                class="dropdown-item" href="blog-details.html">Blog Details</a> <a
-                                                class="dropdown-item" href="blog-details-2.html">Blog Details Left
-                                            Sidebar</a></div>
-                                </li>
-                                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-                                                                 data-bs-toggle="dropdown" href="#" role="button"
-                                                                 aria-haspopup="true" aria-expanded="false"> Contact
-                                        Us </a>
-                                    <div class="dropdown-menu"><a class="dropdown-item" href="contact.html">Contact Us
-                                            1</a> <a class="dropdown-item" href="contact-2.html">Contact Us 2</a></div>
-                                </li>
-                                <li class="on-mob"><a href="services.html#quote-now">Quote Now</a></li>
-                            </ul>
+                            <?php
+                            wp_nav_menu(array(
+                                    'theme_location' => 'menu-header',
+                                    'menu_class' => 'nav navbar-nav',
+                                    'container' => false
+                                )
+                            );
+                            ?>
                         </nav>
 
                         <div class="pull-right quote-now"><a href="#" data-bs-toggle="modal" data-bs-target="#myModal3">Quote
