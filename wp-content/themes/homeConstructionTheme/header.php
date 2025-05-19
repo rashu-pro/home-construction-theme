@@ -48,36 +48,28 @@
                     <div class="top-search-div">
                         <div class="top-social">
                             <ul>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="https://www.facebook.com/srgit/" title=""
-                                                                       target="_blank"><i
-                                                    class="fa fa-facebook"></i></a></div>
-                                </li>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="https://twitter.com/srgit" title=""
-                                                                       target="_blank"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="http://srgit.tumblr.com/" title=""
-                                                                       target="_blank"><i class="fa fa-tumblr"></i></a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="https://www.linkedin.com/company/srgit"
-                                                                       title="" target="_blank"><i
-                                                    class="fa fa-linkedin"></i></a></div>
-                                </li>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="https://www.instagram.com/srgit/" title=""
-                                                                       target="_blank"><i
-                                                    class="fa fa-instagram"></i></a></div>
-                                </li>
-                                <li>
-                                    <div class="hvr-sweep-to-right"><a href="https://in.pinterest.com/srgit/" title=""
-                                                                       target="_blank"><i
-                                                    class="fa fa-pinterest"></i></a></div>
-                                </li>
+                                <?php
+                                $social_titles = Redux::get_option('hhc_redux_options', 'hhc_social_title');
+                                $social_icons = Redux::get_option('hhc_redux_options', 'hhc_social_icon');
+                                $social_urls = Redux::get_option('hhc_redux_options', 'hhc_social_url');
+                                ?>
+                                <?php if (!empty($social_titles)): ?>
+                                    <?php $counter = 0; ?>
+                                    <?php foreach ($social_titles as $title): ?>
+                                        <?php if ($title): ?>
+                                            <li>
+                                                <div class="hvr-sweep-to-right"><a
+                                                            href="<?php echo $social_urls[$counter] ?>"
+                                                            title="<?php echo $title ?>"
+                                                            target="_blank"><i
+                                                                class="<?php echo $social_icons[$counter] ?>"></i></a>
+                                                </div>
+                                            </li>
+                                        <?php endif; ?>
+                                        <?php $counter++; ?>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+
                             </ul>
                         </div>
 
@@ -96,7 +88,8 @@
                 <div class="container-fluid no-padding">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header page-scroll">
-                        <div class="pull-left fixed-menu-logo-2"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
+                        <div class="pull-left fixed-menu-logo-2"><a href="<?php echo esc_url(home_url('/')) ?>"
+                                                                    title="Home"><img
                                         src="assets/imgs/responsive-logo-2.png" alt=""/></a></div>
                         <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
                                 data-bs-target="#bs-example-navbar-collapse-1"><span

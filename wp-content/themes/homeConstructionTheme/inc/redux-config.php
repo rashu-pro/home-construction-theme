@@ -13,7 +13,7 @@ if (!class_exists('Redux')) {
 }
 
 // This is your option name where all the Redux data is stored.
-$opt_name = 'redux_options';
+$opt_name = 'hhc_redux_options';
 
 /**
  * GLOBAL ARGUMENTS
@@ -43,8 +43,8 @@ $args = array(
     // Show the sections below the admin menu item or not.
     'allow_sub_menu' => true,
 
-    'menu_title' => esc_html__('Theme Options'),
-    'page_title' => esc_html__('Sample Options', 'your-textdomain-here'),
+    'menu_title' => __('Theme Options'),
+    'page_title' => __('Sample Options'),
 
     // Disable this in case you want to create your own Google fonts loader.
     'disable_google_fonts_link' => false,
@@ -158,19 +158,19 @@ $args = array(
 $args['admin_bar_links'][] = array(
     'id' => 'redux-docs',
     'href' => '//devs.redux.io/',
-    'title' => esc_html__('Documentation', 'your-textdomain-here'),
+    'title' => __('Documentation'),
 );
 
 $args['admin_bar_links'][] = array(
     'id' => 'redux-support',
     'href' => '//github.com/ReduxFramework/redux-framework/issues',
-    'title' => esc_html__('Support', 'your-textdomain-here'),
+    'title' => __('Support'),
 );
 
 $args['admin_bar_links'][] = array(
     'id' => 'redux-extensions',
     'href' => 'redux.io/extensions',
-    'title' => esc_html__('Extensions', 'your-textdomain-here'),
+    'title' => __('Extensions'),
 );
 
 // SOCIAL ICONS → Set up custom links in the footer for quick links in your panel footer icons.
@@ -181,17 +181,17 @@ $args['share_icons'][] = array(
 );
 $args['share_icons'][] = array(
     'url' => '//www.facebook.com/pages/Redux-Framework/243141545850368',
-    'title' => esc_html__('Like us on Facebook', 'your-textdomain-here'),
+    'title' => __('Like us on Facebook'),
     'icon' => 'el el-facebook',
 );
 $args['share_icons'][] = array(
     'url' => '//twitter.com/reduxframework',
-    'title' => esc_html__('Follow us on Twitter', 'your-textdomain-here'),
+    'title' => __('Follow us on Twitter'),
     'icon' => 'el el-twitter',
 );
 $args['share_icons'][] = array(
     'url' => '//www.linkedin.com/company/redux-framework',
-    'title' => esc_html__('Find us on LinkedIn', 'your-textdomain-here'),
+    'title' => __('Find us on LinkedIn'),
     'icon' => 'el el-linkedin',
 );
 
@@ -203,13 +203,13 @@ if (false !== $args['global_variable']) {
         $v = str_replace('-', '_', $args['opt_name']);
     }
 
-    $args['intro_text'] = '<p>' . sprintf(__('Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: $s', 'your-textdomain-here') . '</p>', '<strong>' . $v . '</strong>');
+    $args['intro_text'] = '<p>' . sprintf(__('Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: $s') . '</p>', '<strong>' . $v . '</strong>');
 } else {
-    $args['intro_text'] = '<p>' . esc_html__('This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.', 'your-textdomain-here') . '</p>';
+    $args['intro_text'] = '<p>' . __('This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.') . '</p>';
 }
 
 // Add content after the form.
-$args['footer_text'] = '<p>' . esc_html__('This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.', 'your-textdomain-here') . '</p>';
+$args['footer_text'] = '<p>' . __('This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.') . '</p>';
 
 Redux::set_args($opt_name, $args);
 
@@ -224,21 +224,21 @@ Redux::set_args($opt_name, $args);
 $help_tabs = array(
     array(
         'id' => 'redux-help-tab-1',
-        'title' => esc_html__('Theme Information 1', 'your-textdomain-here'),
-        'content' => '<p>' . esc_html__('This is the tab content, HTML is allowed.', 'your-textdomain-here') . '</p>',
+        'title' => __('Theme Information 1'),
+        'content' => '<p>' . __('This is the tab content, HTML is allowed.') . '</p>',
     ),
 
     array(
         'id' => 'redux-help-tab-2',
-        'title' => esc_html__('Theme Information 2', 'your-textdomain-here'),
-        'content' => '<p>' . esc_html__('This is the tab content, HTML is allowed.', 'your-textdomain-here') . '</p>',
+        'title' => __('Theme Information 2'),
+        'content' => '<p>' . __('This is the tab content, HTML is allowed.') . '</p>',
     ),
 );
 
 Redux::set_help_tab($opt_name, $help_tabs);
 
 // Set the help sidebar.
-$content = '<p>' . esc_html__('This is the sidebar content, HTML is allowed.', 'your-textdomain-here') . '</p>';
+$content = '<p>' . __('This is the sidebar content, HTML is allowed.') . '</p>';
 Redux::set_help_sidebar($opt_name, $content);
 
 /*
@@ -264,19 +264,19 @@ $kses_exceptions = array(
 );
 
 $section = array(
-    'title' => esc_html__('General Options'),
+    'title' => __('General Options'),
     'id' => 'basic',
-    'desc' => esc_html__('Basic field with no subsections.', 'your-textdomain-here'),
+    'desc' => __('Basic field with no subsections.'),
     'icon' => 'el el-home',
     'fields' => array(
         array(
             'id' => 'opt-text',
             'type' => 'text',
-            'title' => esc_html__('Example Text', 'your-textdomain-here'),
-            'desc' => esc_html__('Example description.', 'your-textdomain-here'),
-            'subtitle' => esc_html__('Example subtitle.', 'your-textdomain-here'),
+            'title' => __('Example Text'),
+            'desc' => __('Example description.'),
+            'subtitle' => __('Example subtitle.'),
             'hint' => array(
-                'content' => wp_kses(__('This is a <strong>hint</strong> tool-tip for the text field.<br/><br/>Add any HTML-based text you like here.', 'your-textdomain-here'), $kses_exceptions),
+                'content' => wp_kses(__('This is a <strong>hint</strong> tool-tip for the text field.<br/><br/>Add any HTML-based text you like here.'), $kses_exceptions),
             ),
         ),
     ),
@@ -285,26 +285,26 @@ $section = array(
 Redux::set_section($opt_name, $section);
 
 $section = array(
-    'title' => __('General Options', 'your-textdomain-here'),
+    'title' => __('General Options'),
     'id' => 'basic',
-    'desc' => __('Basic fields as subsections.', 'your-textdomain-here'),
+    'desc' => __('Basic fields as subsections.'),
     'icon' => 'el el-home',
 );
 
 Redux::set_section($opt_name, $section);
 
 $section = array(
-    'title' => esc_html__('Text', 'your-textdomain-here'),
-    'desc' => esc_html__('For full documentation on this field, visit: ', 'your-textdomain-here') . '<a href="https://devs.redux.io/core-fields/text.html" target="_blank">https://devs.redux.io/core-fields/text.html</a>',
+    'title' => __('Text'),
+    'desc' => __('For full documentation on this field, visit: ') . '<a href="https://devs.redux.io/core-fields/text.html" target="_blank">https://devs.redux.io/core-fields/text.html</a>',
     'id' => 'opt-text-subsection',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'text-example',
             'type' => 'text',
-            'title' => esc_html__('Text Field', 'your-textdomain-here'),
-            'subtitle' => esc_html__('Subtitle', 'your-textdomain-here'),
-            'desc' => esc_html__('Field Description', 'your-textdomain-here'),
+            'title' => __('Text Field'),
+            'subtitle' => __('Subtitle'),
+            'desc' => __('Field Description'),
             'default' => 'Default Text',
         ),
     ),
@@ -313,22 +313,61 @@ $section = array(
 Redux::set_section($opt_name, $section);
 
 $section = array(
-    'title' => esc_html__('Text Area', 'your-textdomain-here'),
-    'desc' => esc_html__('For full documentation on this field, visit: ', 'your-textdomain-here') . '<a href="https://devs.redux.io/core-fields/textarea.html" target="_blank">https://devs.redux.io/core-fields/textarea.html</a>',
+    'title' => __('Text Area'),
+    'desc' => __('For full documentation on this field, visit: ') . '<a href="https://devs.redux.io/core-fields/textarea.html" target="_blank">https://devs.redux.io/core-fields/textarea.html</a>',
     'id' => 'opt-textarea-subsection',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'textarea-example',
             'type' => 'textarea',
-            'title' => esc_html__('Text Area Field', 'your-textdomain-here'),
-            'subtitle' => esc_html__('Subtitle', 'your-textdomain-here'),
-            'desc' => esc_html__('Field Description', 'your-textdomain-here'),
+            'title' => __('Text Area Field'),
+            'subtitle' => __('Subtitle'),
+            'desc' => __('Field Description'),
             'default' => 'Default Text',
         ),
     ),
 );
 
+Redux::set_section($opt_name, $section);
+
+/**
+ * Social links options
+ */
+$section = array(
+    'title' => __('Social Links'),
+    'id' => 'social_links_section',
+    'desc' => __('Add your social media links below.'),
+    'icon' => 'el el-share-alt',
+    'fields' => array(
+        array(
+            'id' => 'social_links',
+            'type' => 'repeater',
+            'title' => __('Social Media Links'),
+            'subtitle' => __('Add links to your social profiles.'),
+            'fields' => array(
+                array(
+                    'id' => 'hhc_social_title',
+                    'type' => 'text',
+                    'title' => __('Title')
+                ),
+                array(
+                    'id' => 'hhc_social_icon',
+                    'type' => 'text',
+                    'title' => __('Icon Class (FontAwesome)'),
+                    'desc' => __('e.g. fa fa-facebook, fa fa-twitter'),
+                ),
+                array(
+                    'id' => 'hhc_social_url',
+                    'type' => 'text',
+                    'title' => __('Link'),
+                    'validate' => 'url',
+                ),
+            ),
+            'sortable' => true,
+        ),
+    ),
+);
 Redux::set_section($opt_name, $section);
 
 /*
