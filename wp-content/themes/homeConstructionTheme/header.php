@@ -30,7 +30,7 @@
         <!--header -->
         <div class="top-header">
             <div class="container">
-                <div class="pull-left"><a href="index.html" title="Home"><img
+                <div class="pull-left"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
                                 src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" class="logo1"
                                 title="" alt=""/> </a></div>
                 <div class="pull-right">
@@ -96,7 +96,7 @@
                 <div class="container-fluid no-padding">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header page-scroll">
-                        <div class="pull-left fixed-menu-logo-2"><a href="index.html" title="Home"><img
+                        <div class="pull-left fixed-menu-logo-2"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
                                         src="assets/imgs/responsive-logo-2.png" alt=""/></a></div>
                         <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
                                 data-bs-target="#bs-example-navbar-collapse-1"><span
@@ -104,7 +104,7 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <div class="pull-left fixed-menu-logo"><a href="index.html" title="Home"><img
+                        <div class="pull-left fixed-menu-logo"><a href="<?php echo site_url() ?>" title="Home"><img
                                         src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png"
                                         alt=""/></a></div>
 
