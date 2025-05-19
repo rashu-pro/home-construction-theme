@@ -35,15 +35,14 @@
                                 title="" alt=""/> </a></div>
                 <div class="pull-right">
                     <div class="top-menu">
-                        <ul>
-                            <li><a href="support.html">Support</a></li>
-                            <li class="saperator">|</li>
-                            <li><a href="privacy.html">Privacy</a></li>
-                            <li class="saperator">|</li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li class="saperator">|</li>
-                            <li><a href="contact.html">Contact us</a></li>
-                        </ul>
+                        <?php
+                        wp_nav_menu(array(
+                                'theme_location' => 'menu-top',
+                                'container' => false,
+                            )
+                        );
+                        ?>
+
                     </div>
                     <div class="clearfix"></div>
                     <div class="top-search-div">
