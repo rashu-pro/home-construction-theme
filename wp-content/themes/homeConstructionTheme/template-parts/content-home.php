@@ -5,6 +5,6 @@
 ?>
 
 <div class="container">
-    <h2 class="text-center" style="min-height: 40vh">Home page</h2>
+    <div class="empty-div" style="min-height: 60vh"></div>
 </div>
 
