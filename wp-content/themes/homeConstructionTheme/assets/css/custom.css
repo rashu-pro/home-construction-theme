@@ -24,3 +24,6 @@
 .top-menu ul li:last-child:after{
     display: none;
 }
+.copyright p{
+    margin-bottom: 0;
+}

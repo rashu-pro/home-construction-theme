@@ -52,7 +52,7 @@
             <div class="footer-container">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="150ms">
+                        <div class="col-lg-6 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="150ms">
                             <div class="foot-logo"> <img src="assets/imgs/footer-logo.png" alt="" class="img-fluid"/> </div>
                             <div class="foot-content">
                                 <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
@@ -68,40 +68,18 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="250ms" >
+                        <div class="col-lg-6 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="250ms" >
                             <div class="foot-logo">
                                 <h3 class="montserrat">Quick links</h3>
                             </div>
-                            <ul class="no-margin no-padding quick-links">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="blogs.html">Blogs</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="350ms">
-                            <div class="foot-logo">
-                                <h3 class="montserrat">Instagram feeds</h3>
-                            </div>
-                            <div class="feeds">
-                                <!-- SnapWidget -->
-                                <iframe src="https://snapwidget.com/embed/952888" class="snapwidget-widget snapwidget-1" allowtransparency="true"  scrolling="no"></iframe>
-                                <!-- SnapWidget -->
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-duration="900ms" data-wow-delay="450ms">
-                            <div class="foot-logo">
-                                <h3 class="montserrat">SIGN UP TO OUR NEWSLETTER</h3>
-                            </div>
-                            <form method="post" id="subsForm" class="footer-subscribe montserrat text-center" onSubmit="return ajaxmailsubscribe();">
-                                <input type="hidden" name="from" value="index.html" />
-                                <input type="email" name="subsemail" id="subsemail" placeholder="Enter your Email here" />
-                                <input type="button" value="SUBSCRIBE" onClick="return ajaxmailsubscribe();"/>
-                                <p>We never spam your email <span class="orange-txt">(*)</span> </p>
-                            </form>
+                            <?php
+                            wp_nav_menu(array(
+                                    'theme_location' => 'menu-quick-links',
+                                    'menu_class' => 'no-margin no-padding quick-links',
+                                    'container' => false
+                                )
+                            );
+                            ?>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -110,10 +88,10 @@
             <div class="copyright">
                 <div class="container">
                     <div class="pull-left">
-                        <p>© 2021. Home Builder Construction Services</p>
+                        <p>© <?php echo date('Y') ?>. <?php bloginfo('name'); ?></p>
                     </div>
                     <div class="pull-right">
-                        <p>Designed & Developed by <a href="http://www.srgit.com/" target="_blank">SRGIT</a></p>
+                        <p>Developed by <a href="https://skifftech.com" target="_blank">www.skifftech.com</a></p>
                     </div>
                     <div class="clearfix"></div>
                 </div>

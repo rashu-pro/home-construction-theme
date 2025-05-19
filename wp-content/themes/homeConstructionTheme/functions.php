@@ -51,6 +51,7 @@ function home_construction_theme_setup() {
 		array(
 			'main_menu' => esc_html__( 'Main Menu', 'home-construction-theme' ),
             'menu-top' => esc_html__('Top Menu', 'home-construction-theme'),
+            'menu-quick-links' => esc_html__('Quick Links', 'home-construction-theme')
 		)
 	);
 
