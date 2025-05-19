@@ -80,10 +80,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="top-search top-s">
-                            <input type="text" placeholder="Search"/>
-                            <input type="submit" class="search" value=""/>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -99,12 +96,6 @@
                 <div class="container-fluid no-padding">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header page-scroll">
-                        <div class="top-search-div search-div search-div-2">
-                            <div class="top-search top-search-2">
-                                <input type="text" placeholder="Search"/>
-                                <input type="submit" class="search" value=""/>
-                            </div>
-                        </div>
                         <div class="pull-left fixed-menu-logo-2"><a href="index.html" title="Home"><img
                                         src="assets/imgs/responsive-logo-2.png" alt=""/></a></div>
                         <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
@@ -127,9 +118,6 @@
                             );
                             ?>
                         </nav>
-
-                        <div class="pull-right quote-now"><a href="#" data-bs-toggle="modal" data-bs-target="#myModal3">Quote
-                                Now <i class="fa fa-long-arrow-right" aria-hidden="true"></i> </a></div>
                         <div class="clearfix"></div>
                     </div>
                     <!-- /.navbar-collapse -->
