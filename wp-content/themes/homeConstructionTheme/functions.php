@@ -145,8 +145,10 @@ function home_construction_theme_scripts() {
 
     wp_enqueue_style('html-template-default-style', get_template_directory_uri()."/assets/css/default.css", array(), _S_VERSION);
     wp_enqueue_style('custom-style', get_template_directory_uri()."/assets/css/custom.css", array(), _S_VERSION);
-
 	wp_enqueue_script( 'home-construction-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+    // Enqueue only when this template part is included
+    wp_enqueue_script('jquery');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
