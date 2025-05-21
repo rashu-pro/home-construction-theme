@@ -10,6 +10,7 @@
     <?php get_template_part('template-parts/home/content', 'home-our-services') ?>
     <?php get_template_part('template-parts/home/content', 'home-projects') ?>
     <?php get_template_part('template-parts/home/content', 'home-staff') ?>
+    <?php get_template_part('template-parts/home/content', 'home-counter') ?>
 </div>
 
 <?php
