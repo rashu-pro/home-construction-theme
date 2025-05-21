@@ -271,6 +271,7 @@ $section = array(
 );
 Redux::set_section($opt_name, $section);
 
+// Contact details option
 $section = array(
     'title' => __('Contact Details'),
     'desc' => __('Add contact details here'),
@@ -295,25 +296,6 @@ $section = array(
         ),
     ),
 );
-Redux::set_section($opt_name, $section);
-
-$section = array(
-    'title' => __('Text Area'),
-    'desc' => __('For full documentation on this field, visit: ') . '<a href="https://devs.redux.io/core-fields/textarea.html" target="_blank">https://devs.redux.io/core-fields/textarea.html</a>',
-    'id' => 'opt-textarea-subsection',
-    'subsection' => true,
-    'fields' => array(
-        array(
-            'id' => 'textarea-example',
-            'type' => 'textarea',
-            'title' => __('Text Area Field'),
-            'subtitle' => __('Subtitle'),
-            'desc' => __('Field Description'),
-            'default' => 'Default Text',
-        ),
-    ),
-);
-
 Redux::set_section($opt_name, $section);
 
 /**
