@@ -148,7 +148,23 @@ function home_construction_theme_scripts() {
 	wp_enqueue_script( 'home-construction-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
     // Enqueue only when this template part is included
-    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-script', get_template_directory_uri(). "/assets/home/vendor/jquery/jquery.min.js", array(), _S_VERSION);
+
+    wp_enqueue_script(
+        'scrolltopnotch-js',
+        get_template_directory_uri() . '/assets/js/scrolltopcontrol.js',
+        array(),
+        null,
+        true
+    );
+
+    wp_enqueue_script(
+        'wow-js',
+        get_template_directory_uri() . '/assets/js/wow.min.js',
+        array(),
+        null,
+        true
+    );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -184,6 +200,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 require get_template_directory() . '/inc/_include.php';
-
-require get_template_directory() . '/inc/redux-config.php';
 
