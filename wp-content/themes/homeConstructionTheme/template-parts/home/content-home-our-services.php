@@ -9,7 +9,7 @@
     <div class="container">
         <h2 class="text-center text-uppercase">Our <span class="orange-txt">Services</span></h2>
         <div class="border-creative text-center"><img
-                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/borders/border.png" alt=""/></div>
+                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""/></div>
         <div class="tabs-left">
             <div class="col-xs-3 no-padding wow fadeInLeft" data-wow-duration="900ms" data-wow-delay="200ms">
                 <ul class="nav nav-tabs">
@@ -34,7 +34,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="a">
                         <div class="col-xs-6 no-padding"><img
-                                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab.jpg" alt=""
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/tab/tab.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
                             <h3>General Contracting</h3>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="tab-pane" id="b">
                         <div class="col-xs-6 no-padding"><img
-                                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab-2.jpg" alt=""
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/tab/tab-2.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
                             <h3>Construction Services</h3>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="tab-pane" id="c">
                         <div class="col-xs-6 no-padding"><img
-                                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab-3.jpg" alt=""
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/tab/tab-3.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
                             <h3>Building Modeling</h3>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="tab-pane" id="d">
                         <div class="col-xs-6 no-padding"><img
-                                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab-4.jpg" alt=""
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/tab/tab-4.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
                             <h3>Pre-construction</h3>
@@ -199,7 +199,7 @@
                     </div>
                     <div class="tab-pane" id="e">
                         <div class="col-xs-6 no-padding"><img
-                                    src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab-5.jpg" alt=""
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/tab/tab-5.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
                             <h3>Management</h3>
