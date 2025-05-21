@@ -16,12 +16,16 @@
         <div class="footer">
             <div class="newsletter wow fadeInUp" data-wow-duration="900ms"  data-wow-delay="100ms">
                 <div class="container">
+                    <?php
+                    $address = Redux::get_option('hhc_redux_options', 'hhc_contact_details_address');
+                    $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
+                    $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
+                    ?>
                     <div class="col-xs-6 address">
                         <div class="col-xs-2"><i class="flaticon-placeholder"></i></div>
                         <div class="nws-txt no-padding">
                             <h5>Location : </h5>
-                            <p>385 "Shubham" New Adarsh Colony near MR4 road,<br>
-                                Jabalpur, (MP)</p>
+                            <?php echo $address ?>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -30,8 +34,7 @@
                             <div class="col-xs-2"><i class="flaticon-technology"></i></div>
                             <div class="nws-txt no-padding">
                                 <h5>Phone : </h5>
-                                <p>0761-4031437, <br class="block-br">
-                                    01 234 567 89</p>
+                                <p><a href="tel:<?php echo $phone ?>"><?php echo $phone ?></a></p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -39,8 +42,7 @@
                             <div class="col-xs-2"><i class="flaticon-email"></i></div>
                             <div class="nws-txt no-padding">
                                 <h5>Mail Us : </h5>
-                                <p><a href="mailto:contact@srgit.com">homemaker@gmail.com</a>, <br>
-                                    <a href="mailto:contact@srgit.com">contact@srgit.com</a></p>
+                                <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
                             </div>
                             <div class="clearfix"></div>
                         </div>

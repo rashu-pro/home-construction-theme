@@ -272,18 +272,26 @@ $section = array(
 Redux::set_section($opt_name, $section);
 
 $section = array(
-    'title' => __('Text'),
-    'desc' => __('For full documentation on this field, visit: ') . '<a href="https://devs.redux.io/core-fields/text.html" target="_blank">https://devs.redux.io/core-fields/text.html</a>',
-    'id' => 'opt-text-subsection',
+    'title' => __('Contact Details'),
+    'desc' => __('Add contact details here'),
+    'id' => 'hhc_contact_details',
     'subsection' => true,
     'fields' => array(
         array(
-            'id' => 'text-example',
+            'id' => 'hhc_contact_details_address',
+            'type' => 'textarea',
+            'title' => __('Address'),
+        ),
+
+        array(
+            'id' => 'hhc_contact_details_email',
             'type' => 'text',
-            'title' => __('Text Field'),
-            'subtitle' => __('Subtitle'),
-            'desc' => __('Field Description'),
-            'default' => 'Default Text',
+            'title' => __('Email'),
+        ),
+        array(
+            'id' => 'hhc_contact_details_phone',
+            'type' => 'text',
+            'title' => __('Phone Number'),
         ),
     ),
 );
