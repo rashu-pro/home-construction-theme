@@ -1,7 +1,7 @@
 <?php
 function add_specific_menu_location_atts($atts, $item, $args) {
     // Check menu location
-    if ($args->theme_location === 'menu-header') {
+    if ($args->theme_location === 'main_menu') {
         $classes = 'nav-link';
 
         // If the item has children, add dropdown-toggle
@@ -19,7 +19,7 @@ function add_specific_menu_location_atts($atts, $item, $args) {
 
 function add_classes_to_the_header_menu_li( $classes, $item, $args ) {
     // Only affect the menu placed in the 'secondary' wp_nav_bar() theme location
-    if ($args->theme_location === 'menu-header') {
+    if ($args->theme_location === 'main_menu') {
         // Make these items 3-columns wide in Bootstrap
         $classes[] = 'nav-item';
     }
@@ -33,7 +33,7 @@ function add_classes_to_the_header_menu_li( $classes, $item, $args ) {
 }
 
 function add_class_to_the_submenu($classes, $args, $depth) {
-    if ($args->theme_location === 'menu-header') {
+    if ($args->theme_location === 'main_menu') {
         $classes[] = 'dropdown-menu';
     }
     return $classes;

@@ -55,7 +55,10 @@
                         <div class="col-lg-6 col-md-6 wow fadeIn" data-wow-duration="900ms"  data-wow-delay="150ms">
                             <div class="foot-logo"> <img src="assets/imgs/footer-logo.png" alt="" class="img-fluid"/> </div>
                             <div class="foot-content">
-                                <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+                                <?php
+                                $footer_text = Redux::get_option('hhc_redux_options', 'hhc_footer_about_text');
+                                echo $footer_text;
+                                ?>
                                 <p class="no-margin">Follow us on:</p>
                                 <ul class="no-margin no-padding foot-social">
                                     <?php

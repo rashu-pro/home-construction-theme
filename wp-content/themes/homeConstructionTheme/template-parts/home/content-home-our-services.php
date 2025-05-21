@@ -37,7 +37,7 @@
                                     src="<?php echo get_template_directory_uri() ?> /assets/imgs/tab/tab.jpg" alt=""
                                     class="img-fluid"/></div>
                         <div class="col-xs-6">
-                            <h3>General Contracting...</h3>
+                            <h3>General Contracting</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                                 has been the industry's standard dummy text ever since.</p>
                             <div class="icon-listing">

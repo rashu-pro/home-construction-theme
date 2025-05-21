@@ -104,7 +104,7 @@
                         <nav class="navbar navbar-expand-sm navbar-left">
                             <?php
                             wp_nav_menu(array(
-                                    'theme_location' => 'menu-header',
+                                    'theme_location' => 'main_menu',
                                     'menu_class' => 'nav navbar-nav',
                                     'container' => false
                                 )

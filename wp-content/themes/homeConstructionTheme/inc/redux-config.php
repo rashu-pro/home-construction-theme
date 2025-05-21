@@ -266,31 +266,9 @@ $kses_exceptions = array(
 $section = array(
     'title' => __('General Options'),
     'id' => 'basic',
-    'desc' => __('Basic field with no subsections.'),
-    'icon' => 'el el-home',
-    'fields' => array(
-        array(
-            'id' => 'opt-text',
-            'type' => 'text',
-            'title' => __('Example Text'),
-            'desc' => __('Example description.'),
-            'subtitle' => __('Example subtitle.'),
-            'hint' => array(
-                'content' => wp_kses(__('This is a <strong>hint</strong> tool-tip for the text field.<br/><br/>Add any HTML-based text you like here.'), $kses_exceptions),
-            ),
-        ),
-    ),
-);
-
-Redux::set_section($opt_name, $section);
-
-$section = array(
-    'title' => __('General Options'),
-    'id' => 'basic',
     'desc' => __('Basic fields as subsections.'),
     'icon' => 'el el-home',
 );
-
 Redux::set_section($opt_name, $section);
 
 $section = array(
@@ -309,7 +287,6 @@ $section = array(
         ),
     ),
 );
-
 Redux::set_section($opt_name, $section);
 
 $section = array(
@@ -365,6 +342,33 @@ $section = array(
                 ),
             ),
             'sortable' => true,
+        ),
+    ),
+);
+Redux::set_section($opt_name, $section);
+
+/**
+ * Footer Options
+ */
+$section = array(
+    'title' => __('Footer Options'),
+    'id' => 'footer_options',
+    'desc' => __('Footer options fields'),
+    'icon' => 'el el-arrow-down',
+);
+Redux::set_section($opt_name, $section);
+
+// Footer about text
+$section = array(
+    'title' => __('About Text'),
+    'desc' => __('Add about text here'),
+    'id' => 'footer_about_text',
+    'subsection' => true,
+    'fields' => array(
+        array(
+            'id' => 'hhc_footer_about_text',
+            'type' => 'editor',
+            'title' => __('Footer About Text'),
         ),
     ),
 );

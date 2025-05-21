@@ -160,6 +160,15 @@ function home_construction_theme_scripts() {
         true
     );
 
+    // Define PHP data to pass
+    $theme_object = array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'theme_url' => get_template_directory_uri(),
+    );
+
+    // Pass the data to JavaScript
+    wp_localize_script('scrolltopnotch-js', 'themeObject', $theme_object);
+
     wp_enqueue_script(
         'wow-js',
         get_template_directory_uri() . '/assets/js/wow.min.js',
