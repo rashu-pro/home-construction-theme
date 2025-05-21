@@ -5,7 +5,7 @@
 ?>
 
 <div class="home-page">
-    <?php get_template_part('template-parts/content', 'main-slider') ?>
+    <?php get_template_part('template-parts/content', 'hero-slider') ?>
     <div class="empty-div" style="min-height: 60vh"></div>
 
 </div>
