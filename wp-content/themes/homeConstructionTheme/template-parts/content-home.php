@@ -11,6 +11,7 @@
     <?php get_template_part('template-parts/home/content', 'home-projects') ?>
     <?php get_template_part('template-parts/home/content', 'home-staff') ?>
     <?php get_template_part('template-parts/home/content', 'home-counter') ?>
+    <?php get_template_part('template-parts/home/content', 'home-testimonial') ?>
 </div>
 
 <?php

@@ -148,7 +148,9 @@ function home_construction_theme_scripts() {
 	wp_enqueue_script( 'home-construction-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
     // Enqueue only when this template part is included
-    wp_enqueue_script('jquery-script', get_template_directory_uri(). "/assets/home/vendor/jquery/jquery.min.js", array(), _S_VERSION);
+    wp_enqueue_script('jquery-script', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, false);
+    // bootstrap
+    wp_enqueue_script('bootstrap-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), _S_VERSION, false);
 
     wp_enqueue_script(
         'scrolltopnotch-js',
