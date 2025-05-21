@@ -58,13 +58,25 @@
                                 <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
                                 <p class="no-margin">Follow us on:</p>
                                 <ul class="no-margin no-padding foot-social">
-                                    <li><a href="https://www.facebook.com/srgit/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="https://twitter.com/srgit" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="http://srgit.tumblr.com/" target="_blank"><i class="fa fa-tumblr"></i></a></li>
-                                    <li><a href="https://www.instagram.com/srgit/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/srgit" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href="https://plus.google.com/u/0/111241896454295946416"  target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="https://in.pinterest.com/srgit/"  target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                    <?php
+                                    $social_titles = Redux::get_option('hhc_redux_options', 'hhc_social_title');
+                                    $social_icons = Redux::get_option('hhc_redux_options', 'hhc_social_icon');
+                                    $social_urls = Redux::get_option('hhc_redux_options', 'hhc_social_url');
+                                    ?>
+                                    <?php if (!empty($social_titles)): ?>
+                                        <?php $counter = 0; ?>
+                                        <?php foreach ($social_titles as $title): ?>
+                                            <?php if ($title): ?>
+                                                <li>
+                                                    <a href="<?php echo $social_urls[$counter] ?>" target="_blank" title="<?php echo $title ?>">
+                                                        <i class="<?php echo $social_icons[$counter] ?>"></i>
+                                                    </a>
+                                                </li>
+                                            <?php endif; ?>
+                                            <?php $counter++; ?>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+
                                 </ul>
                             </div>
                         </div>
