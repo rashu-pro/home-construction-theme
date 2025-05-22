@@ -3,14 +3,14 @@
  * Home page what we do section
  */
 
-$section_name = get_field('section_name');
-$section_heading = get_field('section_heading');
-$section_details = get_field('section_details');
-$section_banner = get_field('section_banner');
-$status = get_field('status');
+$section_name = get_field('section_name_wwd');
+$section_heading = get_field('section_heading_wwd');
+$section_details = get_field('section_details_wwd');
+$section_banner = get_field('section_banner_wwd');
+$status = get_field('status_wwd');
 ?>
 
-<?php if($status['value']): ?>
+<?php if(!empty($status) && $status['value']): ?>
     <!-- Content Section -->
     <div class="content-section about-section about-home" id="about"><span id="main-content"
                                                                            class="hotspot hotspot-subscribe"></span>
