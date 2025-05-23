@@ -23,11 +23,11 @@ $entries = get_posts($args);
 ?>
 
 <?php
-if(!empty($status) && $status['value']){
-    if(!empty($entries)){
+if (!empty($status) && $status['value']) {
+    if (!empty($entries)) {
         ?>
         <!-- client-testimonial -->
-        <div class="testimonial-section wow fadeIn pos-relative" data-wow-duration="900ms"  data-wow-delay="150ms">
+        <div class="testimonial-section wow fadeIn pos-relative" data-wow-duration="900ms" data-wow-delay="150ms">
             <div class="pattern"></div>
             <div class="container pos-relative">
                 <div class="text-center testi-heading">
@@ -37,8 +37,8 @@ if(!empty($status) && $status['value']){
                     <div class="carousel-inner" role="listbox">
                         <?php
                         $counter = 0;
-                        foreach ($entries as $entry){
-                            $client_name = get_field('clients_name', $entry->ID) ? get_field('clients_name', $entry->ID).',' : '' ;
+                        foreach ($entries as $entry) {
+                            $client_name = get_field('clients_name', $entry->ID) ? get_field('clients_name', $entry->ID) . ',' : '';
                             $client_org_name = get_field('clients_organization_name', $entry->ID);
                             $client_designation = get_field('clients_designation', $entry->ID);
                             $client_feedback = get_field('clients_feedback', $entry->ID);
@@ -53,7 +53,8 @@ if(!empty($status) && $status['value']){
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="img-and-name">
-                                                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/quote.png" class="quote-icon img-fluid" alt=""/>
+                                                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/quote.png"
+                                                     class="quote-icon img-fluid" alt=""/>
                                                 <?php echo $thumbnail_image ?>
                                                 <div class="clearfix"></div>
                                             </div>
@@ -61,22 +62,26 @@ if(!empty($status) && $status['value']){
                                                 <p>"<?php echo $client_feedback ?>"</p>
                                             </div>
                                             <h5>
-                                               <?php echo $client_name ?> <?php echo $client_designation ?> of <?php echo $client_org_name ?>
+                                                <?php echo $client_name ?> <?php echo $client_designation ?>
+                                                of <?php echo $client_org_name ?>
                                             </h5>
                                         </div>
                                     </div>
                                 </blockquote>
                             </div>
-                                <?php
+                            <?php
                             $counter++;
                         }
                         ?>
                     </div>
                 </div>
-                <a class="left carousel-control" href="#quote-carousel" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i> </a> <a class="right carousel-control" href="#quote-carousel" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i> </a> </div>
+                <a class="left carousel-control" href="#quote-carousel" data-slide="prev"><i class="fa fa-angle-left"
+                                                                                             aria-hidden="true"></i>
+                </a> <a class="right carousel-control" href="#quote-carousel" data-slide="next"><i
+                            class="fa fa-angle-right" aria-hidden="true"></i> </a></div>
         </div>
         <!-- \\ client-testimonial -->
-<?php
+        <?php
     }
 }
 ?>
