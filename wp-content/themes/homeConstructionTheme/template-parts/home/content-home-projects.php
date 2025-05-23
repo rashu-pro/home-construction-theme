@@ -72,6 +72,7 @@ $entries = get_posts($args);
                     border: 0 none
                 }
             }
+
             @media (min-width: 992px) {
                 .projects-section .grid-item {
                     width: 20%;
@@ -96,6 +97,8 @@ $entries = get_posts($args);
                             'class' => 'img-fluid'
                         ));
                         $entry_title = $entry->post_title;
+                        // Get taxonomy terms for each project
+                        $terms = get_the_terms($entry->ID, 'project-category');
                         ?>
                         <div class="grid-item wow fadeIn" data-wow-duration="900ms"
                              data-wow-delay="<?php echo $wow_delay ?>ms">
@@ -108,7 +111,28 @@ $entries = get_posts($args);
                                         <span class="clearfix"></span>
                                         <?php echo $entry_title ?>
                                     </h3>
-                                    <p>Design / Build</p>
+                                    <?php
+                                    if (!empty($terms)) {
+                                        ?>
+                                        <p>
+                                            <?php
+                                            $counter = 1;
+                                            foreach ($terms as $term) {
+                                                $term_name = $term->name;
+                                                if ($counter !== count($terms)) {
+                                                    $term_name = $term_name . ' / ';
+                                                }
+                                                echo $term_name;
+                                                $counter++;
+                                            }
+                                            ?>
+                                        </p>
+                                        <?php
+                                    }
+                                    ?>
+                                    <p>
+
+                                    </p>
                                 </div>
                             </div>
                             <?php echo $entry_thumb ?>
