@@ -3,123 +3,135 @@
  * Home page projects section
  */
 
+$section_name = get_field('section_name_project');
+$status = get_field('status_project');
 $args = [
-    'post_type'      => 'hhc-project',
+    'post_type' => 'hhc-project',
     'posts_per_page' => -1,
-    'orderby'        => 'meta_value_num',
-    'meta_key'       => 'order',
-    'order'          => 'ASC',
-    'meta_query'     => [
+    'orderby' => 'meta_value_num',
+    'meta_key' => 'order',
+    'order' => 'ASC',
+    'meta_query' => [
         [
-            'key'     => 'status',
-            'value'   => 1,
+            'key' => 'status',
+            'value' => 1,
             'compare' => '='
         ]
     ],
 ];
 
-$projects = get_posts($args);
+$entries = get_posts($args);
 ?>
 
-<?php if(!empty($projects)): ?>
-    <!-- Projects -->
-    <div class="content-section projects-section">
-        <div class="pattern"></div>
-        <div class="container">
-            <h2 class="text-center text-uppercase">Our Latest <span class="orange-txt">Projects</span></h2>
-            <div class="border-creative text-center"><img
-                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border-2.png" alt=""/></div>
+<?php if(!empty($status) && $status['value']): ?>
+    <?php if (!empty($entries)): ?>
+        <style>
+            .projects-section .grid-item {
+                padding: 0 5px;
+                /*height: 270px;*/
+                position: relative;
+                margin-bottom: 10px;
+                width: 20%;
+            }
 
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="100ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project1.jpg" alt=""
-                     class="img-fluid"/></div>
+            .projects-section .grid-item img {
+                border: 4px solid #ffffff;
+            }
 
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="150ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project2.jpg" alt=""
-                     class="img-fluid"/></div>
+            .projects-section .grid-item:hover {
+                cursor: pointer;
+            }
 
-            <div class="col-xs-4 wow fadeIn" data-wow-duration="900ms" data-wow-delay="200ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
+            .projects-section .grid-item .gamma-description{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .projects-section .grid-item:hover .gamma-description {
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+                filter: alpha(opacity=90);
+                opacity: 0.90;
+            }
+
+            .projects-section .grid-item .gamma-description h3 {
+                margin-top: 0;
+            }
+            .projects-section .grid-item .gamma-description p{
+                margin: 0;
+            }
+
+            @media (max-width: 1200px) {
+                .projects-section .grid-item {
+                    max-height: 190px;
+                    overflow: hidden
+                }
+
+                .projects-section .grid-item img {
+                    border: 0 none
+                }
+            }
+
+            @media (max-width: 991px) {
+                .projects-section .grid-item .gamma-description h3 {
+                    display: none
+                }
+            }
+        </style>
+        <!-- Projects -->
+        <div class="content-section projects-section">
+            <div class="pattern"></div>
+            <div class="container">
+                <h2 class="text-center text-uppercase">Our Latest <span class="orange-txt">Projects</span></h2>
+                <div class="border-creative text-center"><img
+                            src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border-2.png" alt=""/></div>
+
+                <div class="grid-masonary">
+                    <?php
+                    $wow_delay = 100;
+                    $wow_delay_increase = 50;
+                    foreach ($entries as $entry){
+                        $entry_thumb = get_the_post_thumbnail($entry->ID, 'full', array(
+                                'class' => 'img-fluid'
+                        ));
+                        $entry_title = $entry->post_title;
+                        ?>
+                        <div class="grid-item wow fadeIn" data-wow-duration="900ms" data-wow-delay="<?php echo $wow_delay ?>ms">
+                            <div class="gamma-description montserrat">
+                                <div class="gamma-description-content">
+                                    <a href="javascript:void(0)" class="full-link" title=""></a>
+                                    <h3>
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt="">
+                                        <span class="clearfix"></span>
+                                        <?php echo $entry_title ?>
+                                    </h3>
+                                    <p>Design / Build</p>
+                                </div>
+                            </div>
+                            <?php echo $entry_thumb ?>
+                        </div>
+                        <?php
+                        $wow_delay += $wow_delay_increase;
+                    }
+                    ?>
                 </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project-3.jpg" alt=""
-                     class="img-fluid"/>
-                <div class="clearfix"></div>
             </div>
-
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="250ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project4.jpg" alt=""
-                     class="img-fluid"/></div>
-
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="300ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project5.jpg" alt=""
-                     class="img-fluid"/></div>
-
-            <div class="col-xs-4 wow fadeIn" data-wow-duration="900ms" data-wow-delay="500ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project-6.jpg" alt=""
-                     class="img-fluid"/></div>
-
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="450ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project8.jpg" alt=""
-                     class="img-fluid"/></div>
-
-            <div class="col-xs-2 wow fadeIn" data-wow-duration="900ms" data-wow-delay="400ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project-7.jpg" alt=""
-                     class="img-fluid"/>
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="col-xs-4 wow fadeIn" data-wow-duration="900ms" data-wow-delay="350ms">
-                <div class="gamma-description montserrat"><a href="javascript:void(0) class="full-link" title=""></a>
-                    <h3><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt=""/> <span
-                                class="clearfix"></span> Neque porro quisquam </h3>
-                    <p>Design / Build</p>
-                </div>
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/projects/project-10.jpg" alt=""
-                     class="img-fluid"/></div>
-
-            <div class="clearfix"></div>
+            <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS DONE BY
+                Us
+                <a href="#" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
+                                                                    aria-hidden="true"></i> </a></div>
         </div>
-        <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS DONE BY Us
-            <a href="#" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
-                                                                aria-hidden="true"></i> </a></div>
-    </div>
-    <!--\\ Projects -->
+        <!--\\ Projects -->
+
+        <?php
+        // Enqueue only when this template part is included
+        wp_enqueue_script(
+            'isotope-js',
+            'https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.js',
+            array(),
+            null,
+            true
+        );
+        ?>
+    <?php endif; ?>
 <?php endif; ?>

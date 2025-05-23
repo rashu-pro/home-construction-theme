@@ -122,5 +122,14 @@
 
 <?php wp_footer(); ?>
 
+<script>
+    jQuery(function ($){
+        $('.grid-masonary').isotope({
+            itemSelector: '.grid-item',
+            gutter: 10,
+        });
+    })
+</script>
+
 </body>
 </html>
