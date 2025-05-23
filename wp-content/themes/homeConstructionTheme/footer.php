@@ -23,6 +23,13 @@
     .footer-address, .footer-phone{
         margin-bottom: 15px;
     }
+    .foot-logo{
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .foot-logo img{
+        max-height: 80px;
+    }
 
     @media (min-width: 992px) {
         .copyright-content {
@@ -90,7 +97,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 wow fadeIn" data-wow-duration="900ms" data-wow-delay="150ms">
-                        <div class="foot-logo"><img src="assets/imgs/footer-logo.png" alt="" class="img-fluid"/></div>
+                        <div class="foot-logo"><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" alt="" class="img-fluid"/></div>
                         <div class="foot-content">
                             <?php
                             $footer_text = Redux::get_option('hhc_redux_options', 'hhc_footer_about_text');

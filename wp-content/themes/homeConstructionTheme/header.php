@@ -90,7 +90,7 @@
                     <div class="navbar-header page-scroll">
                         <div class="pull-left fixed-menu-logo-2"><a href="<?php echo esc_url(home_url('/')) ?>"
                                                                     title="Home"><img
-                                        src="assets/imgs/responsive-logo-2.png" alt=""/></a></div>
+                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" alt=""/></a></div>
                         <button type="button" class="navbar-toggle" data-bs-toggle="collapse"
                                 data-bs-target="#bs-example-navbar-collapse-1"><span
                                     class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i></button>
