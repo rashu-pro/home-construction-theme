@@ -23,7 +23,7 @@ $args = [
 $entries = get_posts($args);
 ?>
 
-<?php if(!empty($status) && $status['value']): ?>
+<?php if (!empty($status) && $status['value']): ?>
     <?php if (!empty($entries)): ?>
         <style>
             .projects-section .grid-item {
@@ -42,7 +42,7 @@ $entries = get_posts($args);
                 cursor: pointer;
             }
 
-            .projects-section .grid-item .gamma-description{
+            .projects-section .grid-item .gamma-description {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -57,7 +57,8 @@ $entries = get_posts($args);
             .projects-section .grid-item .gamma-description h3 {
                 margin-top: 0;
             }
-            .projects-section .grid-item .gamma-description p{
+
+            .projects-section .grid-item .gamma-description p {
                 margin: 0;
             }
 
@@ -84,24 +85,27 @@ $entries = get_posts($args);
             <div class="container">
                 <h2 class="text-center text-uppercase">Our Latest <span class="orange-txt">Projects</span></h2>
                 <div class="border-creative text-center"><img
-                            src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border-2.png" alt=""/></div>
+                            src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border-2.png" alt=""/>
+                </div>
 
                 <div class="grid-masonary">
                     <?php
                     $wow_delay = 100;
                     $wow_delay_increase = 50;
-                    foreach ($entries as $entry){
+                    foreach ($entries as $entry) {
                         $entry_thumb = get_the_post_thumbnail($entry->ID, 'full', array(
-                                'class' => 'img-fluid'
+                            'class' => 'img-fluid'
                         ));
                         $entry_title = $entry->post_title;
                         ?>
-                        <div class="grid-item wow fadeIn" data-wow-duration="900ms" data-wow-delay="<?php echo $wow_delay ?>ms">
+                        <div class="grid-item wow fadeIn" data-wow-duration="900ms"
+                             data-wow-delay="<?php echo $wow_delay ?>ms">
                             <div class="gamma-description montserrat">
                                 <div class="gamma-description-content">
                                     <a href="javascript:void(0)" class="full-link" title=""></a>
                                     <h3>
-                                        <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png" alt="">
+                                        <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png"
+                                             alt="">
                                         <span class="clearfix"></span>
                                         <?php echo $entry_title ?>
                                     </h3>
@@ -116,7 +120,8 @@ $entries = get_posts($args);
                     ?>
                 </div>
             </div>
-            <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS DONE BY
+            <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS
+                DONE BY
                 Us
                 <a href="#" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
                                                                     aria-hidden="true"></i> </a></div>
