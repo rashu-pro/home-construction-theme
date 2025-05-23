@@ -31,7 +31,7 @@ $entries = get_posts($args);
                 /*height: 270px;*/
                 position: relative;
                 margin-bottom: 10px;
-                width: 20%;
+                width: 50%;
             }
 
             .projects-section .grid-item img {
@@ -72,10 +72,9 @@ $entries = get_posts($args);
                     border: 0 none
                 }
             }
-
-            @media (max-width: 991px) {
-                .projects-section .grid-item .gamma-description h3 {
-                    display: none
+            @media (min-width: 992px) {
+                .projects-section .grid-item {
+                    width: 20%;
                 }
             }
         </style>

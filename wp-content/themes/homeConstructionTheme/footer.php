@@ -20,6 +20,9 @@
     .copyright-right {
         text-align: center;
     }
+    .footer-address, .footer-phone{
+        margin-bottom: 15px;
+    }
 
     @media (min-width: 992px) {
         .copyright-content {
@@ -36,6 +39,9 @@
         .copyright-right {
             text-align: right;
         }
+        .footer-address, .footer-phone{
+            margin-bottom: 0;
+        }
     }
 
 </style>
@@ -50,7 +56,7 @@
                 $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
                 $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
                 ?>
-                <div class="col-xs-4 address">
+                <div class="col-xs-12 col-md-4 address footer-address">
                     <div class="col-xs-2"><i class="flaticon-placeholder"></i></div>
                     <div class="nws-txt no-padding">
                         <h5>Location : </h5>
@@ -58,8 +64,8 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="col-xs-8 phone-div">
-                    <div class="col-xs-5">
+                <div class="col-xs-12 col-md-8 phone-div">
+                    <div class="col-xs-12 col-md-6 footer-phone">
                         <div class="col-xs-2"><i class="flaticon-technology"></i></div>
                         <div class="nws-txt no-padding">
                             <h5>Phone : </h5>
@@ -67,7 +73,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-xs-6 pull-right">
+                    <div class="col-xs-12 col-md-6 pull-right footer-email">
                         <div class="col-xs-2"><i class="flaticon-email"></i></div>
                         <div class="nws-txt no-padding">
                             <h5>Mail Us : </h5>
