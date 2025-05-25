@@ -36,7 +36,7 @@ $sliders = get_posts($args);
             <div class="container pos-relative">
                 <div class="col-xs-12 text-center">
                     <div class="news-letter-top text-center" style="position:relative; display: inline-block;"><a
-                                id="subscribe" class="scrollup" href="#"> CONTACT US
+                                class="scrollup" href="<?php echo site_url() ?>/contact-us"> CONTACT US
                             <div class="clearfix"></div>
                             <i class="fa fa-angle-down" aria-hidden="true"></i> </a>
                         <div class="clearfix"></div>

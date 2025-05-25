@@ -4,7 +4,7 @@
  */
 
 $section_name = get_field('section_name_clients_logo');
-$section_sub_heading = get_field('section_sub_heading');
+$section_sub_heading = get_field('section_sub_heading_clients_logo');
 $status = get_field('status_clients_logo');
 $args = [
     'post_type' => 'hhc-client',
@@ -61,5 +61,12 @@ if (!empty($status) && $status['value']) {
     }
 }
 
-?>
+// Enqueue only when this template part is included
+wp_enqueue_script(
+    'owl-carousel-staff',
+    get_template_directory_uri() . '/assets/js/owlcarousel/owl.carousel.staff.js',
+    array(),
+    null,
+    true
+);
 

@@ -175,10 +175,13 @@
 
 <script>
     jQuery(function ($) {
-        $('.grid-masonary').isotope({
-            itemSelector: '.grid-item',
-            gutter: 10,
-        });
+        if($('.grid-masonary').length>0){
+            $('.grid-masonary').isotope({
+                itemSelector: '.grid-item',
+                gutter: 10,
+            });
+        }
+
     })
 </script>
 

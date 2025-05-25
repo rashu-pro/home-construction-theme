@@ -2,8 +2,6 @@
 /**
  * Page for home page content
  */
-
-$section_services_status = get_field('status_services');
 ?>
 
 <div class="home-page">

@@ -13,65 +13,66 @@ jQuery(function ($){
 
     })
 
-
-
-
-
-
-    $('.owl-carousel-3').owlCarousel({
-        loop: true,
-        margin:30,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                dots: false,
-                nav: true
-            },
-            600: {
-                items: 3,
-                dots: false,
-                nav: false
-            },
-            1000: {
-                items: 4,
-                nav: true,
-                loop: false,
-                dots: false,
-                margin: 20
+    if($('.owl-carousel-3').length>0){
+        $('.owl-carousel-3').owlCarousel({
+            loop: true,
+            margin:30,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: false,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    dots: false,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    dots: false,
+                    margin: 20
+                }
             }
-        }
-    })
+        })
+    }
 
 
 
 
 
 
-    $('.owl-carousel-2').owlCarousel({
-        loop: true,
-        margin: 40,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                dots: false,
-                nav: true
-            },
-            600: {
-                items: 3,
-                dots: false,
-                nav: false
-            },
-            1000: {
-                items: 4,
-                nav: true,
-                loop: false,
-                dots: false,
-                margin: 20
+    if($('.owl-carousel-2').length>0){
+        $('.owl-carousel-2').owlCarousel({
+            loop: true,
+            margin: 40,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: false,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    dots: false,
+                    nav: false
+                },
+                1000: {
+                    items: 4,
+                    nav: true,
+                    loop: false,
+                    dots: false,
+                    margin: 20
+                }
             }
-        }
-    })
+        })
+    }
+
+
 
 
 
