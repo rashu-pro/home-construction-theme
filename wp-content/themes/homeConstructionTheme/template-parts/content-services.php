@@ -2,6 +2,8 @@
 /**
  * Our service template parts for home page
  */
+
+$status = get_field('status_services');
 $section_name = get_field('section_name_services');
 $args = [
     'post_type' => 'hhc-our-services',
@@ -20,7 +22,7 @@ $args = [
 $services = get_posts($args);
 ?>
 
-<?php if (!empty($services)): ?>
+<?php if (!empty($status) && $status['value'] &&!empty($services)): ?>
     <!-- Our Services Content Section -->
     <div class="content-section light-bg top-tabs">
         <div class="container">

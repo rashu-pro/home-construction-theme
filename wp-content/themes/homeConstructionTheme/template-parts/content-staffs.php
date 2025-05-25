@@ -3,8 +3,8 @@
  * Home page staff section
  */
 
-$section_name = get_field('section_name_staff');
-$status = get_field('status_staff');
+$section_name = get_field('section_name_staffs');
+$status = get_field('status_staffs');
 $args = [
     'post_type' => 'hhc-staff',
     'posts_per_page' => -1,

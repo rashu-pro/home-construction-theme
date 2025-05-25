@@ -8,15 +8,13 @@ $section_services_status = get_field('status_services');
 
 <div class="home-page">
     <?php get_template_part('template-parts/home/content', 'hero-slider') ?>
-    <?php get_template_part('template-parts/home/content', 'home-what-we-do') ?>
-    <?php if($section_services_status['value']): ?>
-        <?php get_template_part('template-parts/home/content', 'home-our-services') ?>
-    <?php endif; ?>
-    <?php get_template_part('template-parts/home/content', 'home-projects') ?>
-    <?php get_template_part('template-parts/home/content', 'home-staff') ?>
-    <?php get_template_part('template-parts/home/content', 'home-counter') ?>
-    <?php get_template_part('template-parts/home/content', 'home-testimonial') ?>
-    <?php get_template_part('template-parts/home/content', 'home-clients') ?>
+    <?php get_template_part('template-parts/content', 'what-we-do') ?>
+    <?php get_template_part('template-parts/content', 'services') ?>
+    <?php get_template_part('template-parts/content', 'projects') ?>
+    <?php get_template_part('template-parts/content', 'staffs') ?>
+    <?php get_template_part('template-parts/content', 'counter') ?>
+    <?php get_template_part('template-parts/content', 'testimonials') ?>
+    <?php get_template_part('template-parts/content', 'clients') ?>
 </div>
 
 <?php

@@ -3,8 +3,8 @@
  * Home page projects section
  */
 
-$section_name = get_field('section_name_project');
-$status = get_field('status_project');
+$section_name = get_field('section_name_projects');
+$status = get_field('status_projects');
 $args = [
     'post_type' => 'hhc-project',
     'posts_per_page' => -1,
