@@ -166,8 +166,6 @@
         </div>
         <!-- footer-->
     </div>
-    <!-- Scroll Top Button -->
-    <a href="#top"></a>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
