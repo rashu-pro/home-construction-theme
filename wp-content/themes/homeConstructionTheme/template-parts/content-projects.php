@@ -146,7 +146,7 @@ $entries = get_posts($args);
             <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS
                 DONE BY
                 Us
-                <a href="#" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
+                <a href="/completed-projects/" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
                                                                     aria-hidden="true"></i> </a></div>
         </div>
         <!--\\ Projects -->
