@@ -8,8 +8,8 @@ get_header();
 ?>
 
     <div class="inner-page">
-        <?php get_template_part('template-parts/content', 'breadcrumb') ?>
-        <?php get_template_part('template-parts/content', 'contact') ?>
+        <?php get_template_part('template-parts/components/content', 'breadcrumb') ?>
+        <?php get_template_part('template-parts/content', 'page-contact') ?>
     </div>
 
 <?php

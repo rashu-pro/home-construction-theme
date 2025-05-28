@@ -5,14 +5,14 @@
 ?>
 
 <div class="home-page">
-    <?php get_template_part('template-parts/home/content', 'hero-slider') ?>
-    <?php get_template_part('template-parts/content', 'what-we-do') ?>
-    <?php get_template_part('template-parts/content', 'services') ?>
-    <?php get_template_part('template-parts/content', 'projects') ?>
-    <?php get_template_part('template-parts/content', 'staffs') ?>
-    <?php get_template_part('template-parts/content', 'counter') ?>
-    <?php get_template_part('template-parts/content', 'testimonials') ?>
-    <?php get_template_part('template-parts/content', 'clients') ?>
+    <?php get_template_part('template-parts/components/content', 'hero-slider') ?>
+    <?php get_template_part('template-parts/components/content', 'what-we-do') ?>
+    <?php get_template_part('template-parts/components/content', 'services') ?>
+    <?php get_template_part('template-parts/components/content', 'projects') ?>
+    <?php get_template_part('template-parts/components/content', 'staffs') ?>
+    <?php get_template_part('template-parts/components/content', 'counter') ?>
+    <?php get_template_part('template-parts/components/content', 'testimonials') ?>
+    <?php get_template_part('template-parts/components/content', 'clients') ?>
 </div>
 
 <?php

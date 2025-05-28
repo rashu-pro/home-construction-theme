@@ -10,6 +10,18 @@ $last_word = array_pop($words);
 $first_part = implode(' ', $words);
 ?>
 
+<style>
+    .inner-header{
+        padding: 30px 0;
+        height: auto;
+    }
+    @media (min-width: 992px){
+        .inner-header{
+            padding: 50px 0;
+        }
+    }
+</style>
+
 <!-- Breadcrumb -->
 <div class="inner-header">
     <div class="pattern"></div>

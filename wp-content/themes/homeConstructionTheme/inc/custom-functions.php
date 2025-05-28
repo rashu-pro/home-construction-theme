@@ -6,6 +6,10 @@ function pretty_dump($array){
     echo "</pre>";
 }
 
+/**
+ * Function to add breadcrumb to the pages
+ * @return void
+ */
 function custom_breadcrumbs() {
     global $post;
     $home_url = home_url('/');

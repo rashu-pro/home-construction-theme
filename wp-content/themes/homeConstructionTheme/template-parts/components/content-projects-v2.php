@@ -82,7 +82,7 @@ $entries = get_posts($args);
                                 <?php echo $entry_thumb ?>
                                 <figcaption>
                                     <h2><i class="fa fa-chevron-right" aria-hidden="true">&nbsp;</i></h2>
-                                    <a href="#" title="Project Details">View more</a></figcaption>
+                                    <a href="<?php echo get_permalink($entry->ID) ?>" title="Project Details">View more</a></figcaption>
                             </figure>
                             <div class="clearfix"></div>
                             <div class="headl montserrat">
@@ -102,7 +102,7 @@ $entries = get_posts($args);
                                 ?>
                             </div>
                             <div style="margin-top:20px;" class="text-left">
-                                <a href="#" class="btn btn-clear"> View Full Project </a>
+                                <a href="<?php echo get_permalink($entry->ID) ?>" class="btn btn-clear"> View Full Project </a>
                             </div>
                         </div>
                     </div>

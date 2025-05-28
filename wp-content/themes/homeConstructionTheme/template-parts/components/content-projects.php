@@ -104,7 +104,7 @@ $entries = get_posts($args);
                              data-wow-delay="<?php echo $wow_delay ?>ms">
                             <div class="gamma-description montserrat">
                                 <div class="gamma-description-content">
-                                    <a href="javascript:void(0)" class="full-link" title=""></a>
+                                    <a href="<?php echo get_permalink($entry->ID) ?>" class="full-link" title=""></a>
                                     <h3>
                                         <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/icons/search.png"
                                              alt="">
@@ -130,9 +130,6 @@ $entries = get_posts($args);
                                         <?php
                                     }
                                     ?>
-                                    <p>
-
-                                    </p>
                                 </div>
                             </div>
                             <?php echo $entry_thumb ?>
@@ -146,7 +143,7 @@ $entries = get_posts($args);
             <div class="project-bottom wow fadeIn" data-wow-duration="900ms" data-wow-delay="550ms"> VIEW MORE WORKS
                 DONE BY
                 Us
-                <a href="/completed-projects/" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
+                <a href="<?php echo site_url() ?>/completed-projects/" class="montserrat">VIEW ALL PROJECTS <i class="fa fa-long-arrow-right"
                                                                     aria-hidden="true"></i> </a></div>
         </div>
         <!--\\ Projects -->
