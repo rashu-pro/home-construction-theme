@@ -27,9 +27,8 @@ $entries = get_posts($args);
         margin-bottom: 0;
     }
     .project-gallery .blog-in h2{
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
-        color: #f2a700;
         line-height: 1.45;
     }
     .project-gallery .prtfl-bx{
@@ -91,33 +90,14 @@ $entries = get_posts($args);
                                         </div>
                                     </div>
                                 </div>
-                                <h2>lorem ipsum site amet</h2>
-                                <p>(<?php echo $total_images ?> photo<?php if($total_images>1) echo '\'s' ?>)</p>
+                                <h2><?php echo $entry->post_title ?></h2>
+                                <p>(<?php echo $total_images ?> photo<?php if($total_images>1) echo 's' ?>)</p>
                             </div>
                         </div>
                             <?php
                     }
                     ?>
 
-
-
-                    <!--                --><?php
-                    //                foreach ($gallery_images as $image){
-                    //                    ?>
-                    <!--                    <div class="col-lg-3 col-md-4 mb-30">-->
-                    <!--                        <div class="img-hover-div">-->
-                    <!--                            <div class="img-hover position-absolute">-->
-                    <!--                                <a data-fancybox="images" href="--><?php //echo $image['url'] ?><!--">-->
-                    <!--                                    <i class="fa fa-search" aria-hidden="true"></i></a>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="image-holder">-->
-                    <!--                                <img src="--><?php //echo $image['url'] ?><!--"-->
-                    <!--                                     alt="" title="" class="img-fluid w-100"></div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    --><?php
-                    //                }
-                    //                ?>
                 </div>
             </div>
                 <?php
