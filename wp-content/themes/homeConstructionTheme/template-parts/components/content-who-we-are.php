@@ -2,39 +2,96 @@
 /**
  * Component for who we are
  */
+
+$status = get_field('status_wwa');
+$section_name = get_field('section_name_wwa');
+$banner_left_column = get_field('banner_left_col_wwa');
+$brief_left_column = get_field('brief_left_col_wwa');
+$icon_heading_column = get_field('heading_column_icon_class_wwa');
+$title_heading_column = get_field('heading_column_title_wwa');
+$title_column_2_right_column = get_field('column_title_wwa_2');
+$title_column_3_right_column = get_field('column_title_wwa_3');
+$text_column_2_right_column = get_field('column_text_wwa_2');
+$text_column_3_right_column = get_field('column_text_wwa_3');
+$banner_1_right_column = get_field('banner_right_column_wwa_1');
+$banner_2_right_column = get_field('banner_right_column_wwa_2');
 ?>
 
-<div class="content-section about-page-section">
-    <div class="container">
-        <h2 class="text-center text-uppercase">Who <span class="orange-txt">WE</span> are</h2>
-        <div class="border-creative text-center"><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""></div>
-        <div class="col-lg-6 col-md-12">
-            <div class="img-container">
-                <img src="<?php echo get_template_directory_uri() ?>/assets/imgs/about/about.jpg" class="img-fluid" alt="">
-                <p>
-                    HERITAGE HOME CONSTRUCTION is a local Qatari company lead by a team of professional members who take great pride in delivering superior business results. The team is comprised of a well-educated blend of unique talents in commercial construction, interior designing and fit out, facility management and maintenance, and trading opportunity development.
-                    Our service offering, experience, market knowledge, resources and staff allow us to meet each project's increasingly complex requirements with competitive practical solutions.
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-12 no-padding">
-            <ul class="about-sec-time no-padding no-margin">
-                <li class="display-cell text-center"> <i class="fa fa-clock-o" aria-hidden="true"></i> <span class="clearfix"> </span> <span class="montserrat">Working hours</span> </li>
-                <li class="display-cell text-center">
-                    Mon-Fri<br>
-                    <span class="orange-txt">9am  - 6pm</span>
-                </li>
-                <li class="display-cell text-center">
-                    Sat<br>
-                    <span class="orange-txt">10am  - 6am</span>
-                </li>
+<?php
+if (!empty($status) && $status['value']) {
+    ?>
+    <div class="content-section about-page-section">
+        <div class="container">
+            <?php if ($section_name): ?>
+                <h2 class="text-center text-uppercase"> <?php echo $section_name ?> </h2>
+            <?php endif; ?>
+            <div class="border-creative text-center"><img
+                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""></div>
+            <div class="col-lg-6 col-md-12">
+                <div class="img-container">
+                    <?php
+                    if ($banner_left_column) {
+                        echo '<img src="' . $banner_left_column['url'] . '" class="img-fluid" />';
+                    }
 
-            </ul>
-            <div class="two-imgs">
-                <div class="col-xs-6 no-padding-left"><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/misc-images/2.jpg" class="img-fluid" alt=""></div>
-                <div class="col-xs-6 no-padding-right"><img src="<?php echo get_template_directory_uri() ?>/assets/imgs/misc-images/1.jpg" class="img-fluid" alt=""></div>
+                    if ($brief_left_column) {
+                        echo '<p>' . $brief_left_column . '</p>';
+                    }
+                    ?>
+                </div>
             </div>
+            <div class="col-lg-6 col-md-12 no-padding">
+                <ul class="about-sec-time no-padding no-margin">
+                    <li class="display-cell text-center">
+                        <?php
+                        if ($icon_heading_column) {
+                            echo '<i class="' . $icon_heading_column . '" aria-hidden="true"></i>';
+                        }
+
+                        if ($title_heading_column) {
+                            echo '<span class="clearfix"> </span> <span class="montserrat">' . $title_heading_column . '</span>';
+                        }
+                        ?>
+                    </li>
+                    <li class="display-cell text-center">
+                        <?php
+                        if ($title_column_2_right_column) {
+                            echo $title_column_2_right_column . '<br>';
+                        }
+
+                        if ($text_column_2_right_column) {
+                            echo '<span class="orange-txt">' . $text_column_2_right_column . '</span>';
+                        }
+                        ?>
+                    </li>
+                    <li class="display-cell text-center">
+                        <?php
+                        if ($title_column_3_right_column) {
+                            echo $title_column_3_right_column . '<br>';
+                        }
+
+                        if ($text_column_3_right_column) {
+                            echo '<span class="orange-txt">' . $text_column_3_right_column . '</span>';
+                        }
+                        ?>
+                    </li>
+
+                </ul>
+                <div class="two-imgs">
+                    <?php
+                    if ($banner_1_right_column) {
+                        echo '<div class="col-xs-6 no-padding-left"><img src="' . $banner_1_right_column['url'] . '" class="img-fluid" alt=""></div>';
+                    }
+
+                    if ($banner_2_right_column) {
+                        echo '<div class="col-xs-6 no-padding-right"><img src="' . $banner_2_right_column['url'] . '" class="img-fluid" alt=""></div>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
     </div>
-</div>
+    <?php
+}
+?>
