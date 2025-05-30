@@ -54,5 +54,3 @@ function custom_breadcrumbs() {
 
     echo '</ol>';
 }
-
-
