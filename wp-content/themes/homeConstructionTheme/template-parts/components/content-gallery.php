@@ -96,6 +96,8 @@ $entries = get_posts($args);
                         </div>
                             <?php
                     }
+
+                    wp_reset_postdata();
                     ?>
 
                 </div>

@@ -4,9 +4,9 @@
  */
 ?>
 
-<div class="inner-page content-section">
+<div class="">
     <?php get_template_part('template-parts/components/content', 'our-goal') ?>
-    <?php get_template_part('template-parts/components/content', 'our-goal-achieve') ?>
+    <?php get_template_part('template-parts/components/content', 'our-focus') ?>
     <?php get_template_part('template-parts/components/content', 'staffs') ?>
     <?php get_template_part('template-parts/components/content', 'clients') ?>
 </div>

@@ -72,6 +72,8 @@ if (!empty($status) && $status['value']) {
                             <?php
                             $counter++;
                         }
+
+                        wp_reset_postdata();
                         ?>
                     </div>
                 </div>

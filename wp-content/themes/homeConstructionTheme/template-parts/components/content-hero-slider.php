@@ -58,6 +58,7 @@ $sliders = get_posts($args);
                     <?php echo $aria_current ?> ></button>
                 <?php $i++; ?>
             <?php endforeach; ?>
+            <?php wp_reset_postdata() ?>
         </div>
         <div class="carousel-inner">
             <?php $i = 0; ?>

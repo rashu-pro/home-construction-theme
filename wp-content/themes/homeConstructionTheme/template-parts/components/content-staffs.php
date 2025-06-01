@@ -23,33 +23,34 @@ $entries = get_posts($args)
 ?>
 
 <?php if (!empty($status) && $status['value']): ?>
-<?php if(!empty($entries)): ?>
+    <?php if (!empty($entries)): ?>
         <!--staff -->
         <div class="content-section light-bg staff-section">
             <div class="container">
                 <h2 class="text-center text-uppercase"><?php echo $section_name ?></h2>
                 <div class="border-creative text-center"><img
-                            src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""/></div>
+                            src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""/>
+                </div>
                 <div id="owl-demo" class="owl-carousel owl-carousel-3 owl-theme wow fadeIn owl-loaded owl-drag"
                      data-wow-duration="900ms" data-wow-delay="250ms">
                     <?php foreach ($entries as $entry): ?>
-                    <?php
-                    $staff_name = $entry->post_title;
-                    $staff_designation = get_field('staff_designation', $entry->ID);
-                    $staff_fb = get_field('facebook_link', $entry->ID);
-                    $staff_twitter = get_field('twitter_link', $entry->ID);
-                    $staff_ig = get_field('instagram_link', $entry->ID);
-                    $staff_ln = get_field('linkedin_link', $entry->ID);
-                    $staff_profile_picture = get_the_post_thumbnail_url($entry->ID);
+                        <?php
+                        $staff_name = $entry->post_title;
+                        $staff_designation = get_field('staff_designation', $entry->ID);
+                        $staff_fb = get_field('facebook_link', $entry->ID);
+                        $staff_twitter = get_field('twitter_link', $entry->ID);
+                        $staff_ig = get_field('instagram_link', $entry->ID);
+                        $staff_ln = get_field('linkedin_link', $entry->ID);
+                        $staff_profile_picture = get_the_post_thumbnail_url($entry->ID);
                         ?>
                         <div class="item">
                             <div class="">
                                 <div class="hexagon hexagon1">
                                     <div class="hexagon-in1">
                                         <div class="hexagon-in2"
-                                             <?php if($staff_profile_picture): ?>
-                                                 style="background:url(<?php echo $staff_profile_picture ?>) no-repeat;"
-                                             <?php endif; ?>
+                                            <?php if ($staff_profile_picture): ?>
+                                                style="background:url(<?php echo $staff_profile_picture ?>) no-repeat;"
+                                            <?php endif; ?>
                                         >
 
                                         </div>
@@ -57,22 +58,30 @@ $entries = get_posts($args)
                                 </div>
                                 <div class="staff-desc text-center">
                                     <h5><?php echo $staff_name ?></h5>
-                                    <?php if($staff_designation): ?>
+                                    <?php if ($staff_designation): ?>
                                         <p><?php echo $staff_designation ?></p>
                                     <?php endif; ?>
                                     <div class="bottom-staff">
                                         <ul class="no-margin no-padding">
-                                            <?php if($staff_fb): ?>
-                                                <li><a href="<?php echo $staff_fb['url'] ?>" target="<?php echo $staff_fb['target'] ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <?php if ($staff_fb): ?>
+                                                <li><a href="<?php echo $staff_fb['url'] ?>"
+                                                       target="<?php echo $staff_fb['target'] ?>"><i
+                                                                class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                             <?php endif; ?>
-                                            <?php if($staff_twitter): ?>
-                                                <li><a href="<?php echo $staff_twitter['url'] ?>" target="<?php echo $staff_twitter['target'] ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                            <?php if ($staff_twitter): ?>
+                                                <li><a href="<?php echo $staff_twitter['url'] ?>"
+                                                       target="<?php echo $staff_twitter['target'] ?>"><i
+                                                                class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                             <?php endif; ?>
-                                            <?php if($staff_ig): ?>
-                                                <li><a href="<?php echo $staff_ig['url'] ?>" target="<?php echo $staff_ig['target'] ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                            <?php if ($staff_ig): ?>
+                                                <li><a href="<?php echo $staff_ig['url'] ?>"
+                                                       target="<?php echo $staff_ig['target'] ?>"><i
+                                                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                             <?php endif; ?>
-                                            <?php if($staff_ln): ?>
-                                                <li><a href="<?php echo $staff_ln['url'] ?>" target="<?php echo $staff_ln['target'] ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <?php if ($staff_ln): ?>
+                                                <li><a href="<?php echo $staff_ln['url'] ?>"
+                                                       target="<?php echo $staff_ln['target'] ?>"><i
+                                                                class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                             <?php endif; ?>
 
                                         </ul>
@@ -88,7 +97,7 @@ $entries = get_posts($args)
         </div>
         <!--\\ staff -->
         <?php
-    wp_reset_postdata();
+        wp_reset_postdata();
         ?>
 
         <?php
@@ -101,6 +110,6 @@ $entries = get_posts($args)
             true
         );
         ?>
-<?php endif; ?>
+    <?php endif; ?>
 
 <?php endif; ?>

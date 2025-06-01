@@ -66,6 +66,8 @@ $services = get_posts($args);
 
                             <?php $i++; ?>
                         <?php endforeach; ?>
+
+                        <?php wp_reset_postdata() ?>
                     </ul>
                 </div>
                 <div class="col-xs-9 wow fadeInRight" data-wow-duration="900ms" data-wow-delay="400ms">

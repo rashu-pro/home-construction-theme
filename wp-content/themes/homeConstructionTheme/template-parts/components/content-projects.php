@@ -137,6 +137,8 @@ $entries = get_posts($args);
                         <?php
                         $wow_delay += $wow_delay_increase;
                     }
+
+                    wp_reset_postdata();
                     ?>
                 </div>
             </div>
