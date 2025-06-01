@@ -12,8 +12,14 @@ $args = [
     'meta_key' => 'order',
     'order' => 'ASC',
     'meta_query' => [
+        'relation' => 'AND',
         [
             'key' => 'status',
+            'value' => 1,
+            'compare' => '='
+        ],
+        [
+            'key' => 'service_show_in_homepage',
             'value' => 1,
             'compare' => '='
         ]
@@ -22,7 +28,7 @@ $args = [
 $services = get_posts($args);
 ?>
 
-<?php if (!empty($status) && $status['value'] &&!empty($services)): ?>
+<?php if (!empty($status) && $status['value'] && !empty($services)): ?>
     <!-- Our Services Content Section -->
     <div class="content-section light-bg top-tabs">
         <div class="container">
