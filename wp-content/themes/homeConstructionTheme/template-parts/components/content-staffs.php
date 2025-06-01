@@ -87,6 +87,9 @@ $entries = get_posts($args)
             </div>
         </div>
         <!--\\ staff -->
+        <?php
+    wp_reset_postdata();
+        ?>
 
         <?php
         // Enqueue only when this template part is included

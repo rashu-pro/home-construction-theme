@@ -27,6 +27,16 @@ $args = [
 ];
 $services = get_posts($args);
 ?>
+<style>
+    .btn{
+        display: inline-block;
+        background: #ffd200;
+        color: #000;
+        padding: 10px 15px;
+        margin-left: 15px;
+        font-size: 15px;
+    }
+</style>
 
 <?php if (!empty($status) && $status['value'] && !empty($services)): ?>
     <!-- Our Services Content Section -->
@@ -125,6 +135,12 @@ $services = get_posts($args);
                 <div class="clearfix"></div>
             </div>
             <!-- /col -->
+
+            <div class="text-center">
+                <a href="<?php echo home_url('/services') ?>" class="btn">VIEW ALL SERVICES <i class="fa fa-long-arrow-right"
+                                                                                                        aria-hidden="true"></i> </a>
+            </div>
+
         </div>
     </div>
 <?php endif; ?>

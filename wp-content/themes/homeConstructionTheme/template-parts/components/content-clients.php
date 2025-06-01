@@ -58,6 +58,7 @@ if (!empty($status) && $status['value']) {
         </div>
         <!-- \\Our Client -->
         <?php
+        wp_reset_postdata();
     }
 }
 
