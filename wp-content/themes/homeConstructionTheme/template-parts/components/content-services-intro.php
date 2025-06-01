@@ -3,8 +3,8 @@
  * Services intro section
  */
 
-$status = get_field('status_services');
-$section_name = get_field('section_name_services');
+$status = get_field('status_services_intro');
+$section_name = get_field('section_name_services_intro');
 $args = [
     'post_type' => 'hhc-our-services',
     'posts_per_page' => -1,
@@ -28,14 +28,14 @@ $posts = get_posts($args);
     }
 </style>
 
-<?php if (!empty($status) && $status['value'] && !empty($posts)): ?>
+<?php if (!empty($status) && $status['value'] == 1): ?>
     <div class="content-section services-main">
-        <h2 class="text-center text-uppercase"><?= $section_name ?></span></h2>
+        <h2 class="text-center text-uppercase"><?php echo $section_name ?></span></h2>
         <div class="border-creative text-center"><img
-                    src="<?= get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""></div>
+                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""></div>
         <div class="container">
             <div class="row" id="what-we-do">
-                <?php foreach ($posts as $post):
+                <?php foreach ($posts as $post){
                     $permalink = get_permalink($post->ID);
                     ?>
                     <div class="col-md-4 col-sm-6">
@@ -57,9 +57,11 @@ $posts = get_posts($args);
                         </a>
 
                     </div>
-                <?php endforeach; ?>
+                <?php } ?>
             </div>
         </div>
     </div>
 <?php endif; ?>
+<?php
+wp_reset_postdata();
 
