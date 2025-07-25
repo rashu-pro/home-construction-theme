@@ -49,7 +49,9 @@ function home_construction_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'home-construction-theme' ),
+			'main_menu' => esc_html__( 'Main Menu', 'home-construction-theme' ),
+            'menu-top' => esc_html__('Top Menu', 'home-construction-theme'),
+            'menu-quick-links' => esc_html__('Quick Links', 'home-construction-theme')
 		)
 	);
 
@@ -141,7 +143,39 @@ function home_construction_theme_scripts() {
 	wp_enqueue_style( 'home-construction-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'home-construction-theme-style', 'rtl', 'replace' );
 
+    wp_enqueue_style('html-template-default-style', get_template_directory_uri()."/assets/css/default.css", array(), _S_VERSION);
+    wp_enqueue_style('custom-style', get_template_directory_uri()."/assets/css/custom.css", array(), _S_VERSION);
 	wp_enqueue_script( 'home-construction-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+    // Enqueue only when this template part is included
+    wp_enqueue_script('jquery-script', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, false);
+    // bootstrap
+    wp_enqueue_script('bootstrap-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), _S_VERSION, false);
+
+    wp_enqueue_script(
+        'scrolltopnotch-js',
+        get_template_directory_uri() . '/assets/js/scrolltopcontrol.js',
+        array(),
+        null,
+        true
+    );
+
+    // Define PHP data to pass
+    $theme_object = array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'theme_url' => get_template_directory_uri(),
+    );
+
+    // Pass the data to JavaScript
+    wp_localize_script('scrolltopnotch-js', 'themeObject', $theme_object);
+
+    wp_enqueue_script(
+        'wow-js',
+        get_template_directory_uri() . '/assets/js/wow.min.js',
+        array(),
+        null,
+        true
+    );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -175,4 +209,6 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+require get_template_directory() . '/inc/_include.php';
 

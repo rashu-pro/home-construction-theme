@@ -1,0 +1,29 @@
+.top-header .logo1{
+    max-width: 70px;
+    max-height: 70px;
+}
+.top-menu li{
+    position: relative;
+    margin: 0 12px;
+}
+.top-menu ul li:first-child{
+    margin-left: 0;
+}
+.top-menu ul li:last-child{
+    margin-right: 0;
+}
+.top-menu li:after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 1px;
+    width: 1px;
+    background-color: #000;
+    right: -12px;
+}
+.top-menu ul li:last-child:after{
+    display: none;
+}
+.copyright p{
+    margin-bottom: 0;
+}
