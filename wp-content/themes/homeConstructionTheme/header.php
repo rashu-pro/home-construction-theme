@@ -18,6 +18,29 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <?php wp_head(); ?>
+    <style>
+        body, body p{
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .navbar-nav .dropdown .dropdown-menu{
+            width: auto;
+        }
+        .navbar-default .navbar-nav>li>a{
+            font-size: 16px;
+        }
+        .navbar-nav .nav-link{
+            font-size: 15px;
+            color: #202020;
+        }
+        .icon-txt .lead{
+            font-size: 16px;
+        }
+        .icon-txt p{
+            font-size: 15px;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>

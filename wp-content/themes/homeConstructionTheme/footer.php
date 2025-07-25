@@ -30,6 +30,9 @@
     .foot-logo img{
         max-height: 80px;
     }
+    .foot-content p{
+        font-size: 15px;
+    }
 
     @media (min-width: 992px) {
         .copyright-content {
