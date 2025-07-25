@@ -69,6 +69,7 @@ $sliders = get_posts($args);
                 $link = get_field('link', $slider->ID);
                 $link_name = get_field('link_name', $slider->ID);
                 $featured_img_url = get_the_post_thumbnail_url($slider->ID, 'full');
+                $video = get_field('slider_video', $slider->ID);
 
                 if (empty($link_name)) $link_name = 'Learn More';
                 ?>
@@ -76,6 +77,10 @@ $sliders = get_posts($args);
                 <div class="carousel-item <?php echo $active_class ?>"
                      style="background-image: url('<?php echo $featured_img_url ?>')">
                     <div class="pattern"></div>
+                    <video controls autoplay muted loop width="100%">
+                        <source src="<?php echo $video['url'] ?>" type="video/mp4" />
+                        Your browser does not support HTML5 video.
+                    </video>
                     <div class="carousel-caption">
                         <?php if ($subheading): ?>
                             <h2><?php echo $subheading ?></h2>
