@@ -59,6 +59,29 @@ $sliders = get_posts($args);
         .carousel-caption h1{
             margin-bottom: 50px;
         }
+        @media (max-width: 1199px){
+            .hero-slider-item{
+                height: auto;
+            }
+            .hero-slider-item video{
+                position: absolute;
+                height: 100%;
+            }
+        }
+        @media (max-width: 767px){
+            .carousel-caption h1{
+                display: block;
+                font-size: 18px;
+                line-height: 1.4;
+                font-weight: 600;
+            }
+            .carousel-caption h2 {
+                font-size: 17px;
+                line-height: 1.4;
+                font-weight: 500;
+                margin-top: 15px;
+            }
+        }
     </style>
 
     <div id="owl-carousel-hero-slider" class="owl-carousel owl-theme owl-carousel-hero-slider">
