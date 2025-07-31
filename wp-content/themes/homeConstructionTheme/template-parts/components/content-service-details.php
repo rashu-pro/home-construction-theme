@@ -2,6 +2,8 @@
 /**
  * Component to show service details
  */
+
+$is_features = get_field('hhc_services_show_features');
 ?>
 
     <style>
@@ -105,17 +107,19 @@
                             );
                             ?>
 
-                            <div>
-                                <h2>Features</h2>
-                                <ul>
-                                    <?php
-                                    for($i = 1; $i <= 6; $i++){
-                                        $feature = get_field('feature_hhc_service_'.$i);
-                                        echo '<li>'.$feature.'</li>';
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
+                            <?php if(($is_features && $is_features['value']) || $is_features === null): ?>
+                                <div>
+                                    <h2>Features</h2>
+                                    <ul>
+                                        <?php
+                                        for($i = 1; $i <= 6; $i++){
+                                            $feature = get_field('feature_hhc_service_'.$i);
+                                            echo '<li>'.$feature.'</li>';
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
 
                         <div class="col-lg-6 col-md-12">
@@ -133,6 +137,36 @@
             </div>
 
             <hr/>
+
+            <!-- Project Videos -->
+            <?php
+            $videos = rwmb_meta( 'video_x14dg8khzw' );
+            if(!empty($videos)){
+                ?>
+                <div class="project-gallery content-section">
+                    <div class="heading boder2 text-center">
+                        <h2 class="text-center text-uppercase"><span class="orange-txt">Videos</span></h2>
+                        <div class="border-creative text-center"><img
+                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt="">
+                        </div>
+
+                        <div class="container">
+                            <div class="row mb-30">
+
+                                <?php foreach ( $videos as $clone ) : ?>
+                                            <?php foreach ( $clone as $video ) : ?>
+                                                <div class="col-md-6">
+                                                    <video style="max-width: 100%" src="<?php echo $video['src']; ?>">
+                                                </div>
+                                            <?php endforeach; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
 
             <!-- Project Gallery -->
             <?php
