@@ -71,6 +71,10 @@ $is_features = get_field('hhc_services_show_features');
         .section-main{
             padding: 30px 0;
         }
+
+        .video-holder{
+            margin-bottom: 30px;
+        }
         @media (min-width: 992px){
             .section-main{
                 padding: 50px 0;
@@ -140,8 +144,10 @@ $is_features = get_field('hhc_services_show_features');
 
             <!-- Project Videos -->
             <?php
-            $videos = rwmb_meta( 'video_x14dg8khzw' );
-            if(!empty($videos)){
+            $youtube_videos = rwmb_meta('url_98y3p5gzwxj') ?: [];
+            $uploaded_videos = rwmb_meta( 'video_x14dg8khzw' ) ?? [];
+            $is_youtube_video_on_top = rwmb_meta('is_youtube_video_on_top');
+            if(!empty($uploaded_videos) || !empty($youtube_videos)){
                 ?>
                 <div class="project-gallery content-section">
                     <div class="heading boder2 text-center">
@@ -152,14 +158,15 @@ $is_features = get_field('hhc_services_show_features');
 
                         <div class="container">
                             <div class="row mb-30">
-
-                                <?php foreach ( $videos as $clone ) : ?>
-                                            <?php foreach ( $clone as $video ) : ?>
-                                                <div class="col-md-6">
-                                                    <video style="max-width: 100%" src="<?php echo $video['src']; ?>">
-                                                </div>
-                                            <?php endforeach; ?>
-                                <?php endforeach; ?>
+                                <?php
+                                if ($is_youtube_video_on_top) {
+                                    render_youtube_videos($youtube_videos);
+                                    render_uploaded_videos($uploaded_videos);
+                                } else {
+                                    render_uploaded_videos($uploaded_videos);
+                                    render_youtube_videos($youtube_videos);
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

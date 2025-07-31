@@ -54,3 +54,71 @@ function custom_breadcrumbs() {
 
     echo '</ol>';
 }
+
+/**
+ * Gets youtube video id from given sharable link
+ * example link: https://youtu.be/k4b4rBJZWYA?si=Mw8j-pALR5xzjzDR
+ * id: k4b4rBJZWYA
+ * @param $url
+ * @return string|null
+ */
+function get_youtube_video_id($url) {
+    $parsedUrl = parse_url($url);
+
+    // Check if it's a youtu.be short link
+    if (isset($parsedUrl['host']) && $parsedUrl['host'] === 'youtu.be') {
+        // Remove leading slash if present
+        return ltrim($parsedUrl['path'], '/');
+    }
+
+    return null;
+}
+
+/**
+ * Renders YouTube videos
+ * @param $youtube_videos
+ * @return void
+ */
+function render_youtube_videos($youtube_videos) {
+    foreach ($youtube_videos as $video_url) {
+        $video_id = get_youtube_video_id($video_url);
+        if ($video_id):
+            ?>
+            <div class="col-md-6">
+                <div class="video-holder">
+                    <iframe width="100%" height="315"
+                            src="https://www.youtube.com/embed/<?= $video_id ?>"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        <?php
+        endif;
+    }
+}
+
+/**
+ * Renders uploaded videos
+ * @param $uploaded_videos
+ * @return void
+ */
+function render_uploaded_videos($uploaded_videos) {
+    foreach ($uploaded_videos as $clone) {
+        foreach ($clone as $video) {
+            ?>
+            <div class="col-md-6">
+                <div class="video-holder">
+                    <video controls width="100%">
+                        <source src="<?= $video['src'] ?>" type="<?= $video['type'] ?>"/>
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+            </div>
+            <?php
+        }
+    }
+}
