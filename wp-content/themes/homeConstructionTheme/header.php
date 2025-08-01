@@ -97,7 +97,17 @@
                 position: absolute;
                 height: 100%;
             }
+
+            .comment-navigation .nav-links, .posts-navigation .nav-links, .post-navigation .nav-links{
+                display: block;
+            }
         }
+
+        .project-navigation .nav-links a {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 
