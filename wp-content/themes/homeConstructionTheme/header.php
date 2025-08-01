@@ -50,6 +50,23 @@
         .navbar-nav .dropdown .dropdown-menu .dropdown:hover .dropdown-menu{
             display: block;
         }
+        .head-icon i{
+            color: #0f356a;
+            position: relative;
+            top: 12px;
+        }
+        .head-icon i:before{
+            font-size: 30px;
+        }
+        .contact-top p{
+            margin: 0;
+        }
+        .contact-top .info-head{
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
         @media (max-width: 1199px){
             .navbar-nav .dropdown .dropdown-menu .dropdown .sub-menu.dropdown-menu{
                 display: block;
@@ -94,49 +111,64 @@
         <!--header -->
         <div class="top-header">
             <div class="container">
-                <div class="pull-left"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
-                                src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" class="logo1"
-                                title="" alt=""/> </a></div>
-                <div class="pull-right">
-                    <div class="top-menu">
-                        <?php
-                        wp_nav_menu(array(
-                                'theme_location' => 'menu-top',
-                                'container' => false,
-                            )
-                        );
-                        ?>
-
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="top-search-div">
-                        <div class="top-social">
-                            <ul>
-                                <?php
-                                $social_titles = Redux::get_option('hhc_redux_options', 'hhc_social_title');
-                                $social_icons = Redux::get_option('hhc_redux_options', 'hhc_social_icon');
-                                $social_urls = Redux::get_option('hhc_redux_options', 'hhc_social_url');
-                                ?>
-                                <?php if (!empty($social_titles)): ?>
-                                    <?php $counter = 0; ?>
-                                    <?php foreach ($social_titles as $title): ?>
-                                        <?php if ($title): ?>
-                                            <li>
-                                                <div class="hvr-sweep-to-right"><a
-                                                            href="<?php echo $social_urls[$counter] ?>"
-                                                            title="<?php echo $title ?>"
-                                                            target="_blank"><i
-                                                                class="<?php echo $social_icons[$counter] ?>"></i></a>
-                                                </div>
-                                            </li>
-                                        <?php endif; ?>
-                                        <?php $counter++; ?>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-
-                            </ul>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="pull-left"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
+                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" class="logo1"
+                                        title="" alt=""/> </a>
                         </div>
+                    </div>
 
+                    <div class="col-sm-9">
+                        <div class="">
+                            <div class="contact-top">
+                                <?php
+                                $address = Redux::get_option('hhc_redux_options', 'hhc_contact_details_address');
+                                $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
+                                $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
+                                ?>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <span class="head-icon">
+                                                    <i class="flaticon-email"></i>
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <p class="info-head">Email</p>
+                                                <p><a href="mailto:<?= $email ?>"> <?= $email ?></a> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="col-xs-2">
+                                            <span class="head-icon">
+                                                    <i class="flaticon-technology"></i>
+                                                </span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <p class="info-head">Phone</p>
+                                            <p><a href="tel:<?= $phone ?>"> <?= $phone ?></a> </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="col-xs-2">
+                                            <span class="head-icon">
+                                                    <i class="flaticon-placeholder"></i>
+                                                </span>
+                                        </div>
+                                        <div class="col-xs-10">
+                                            <p class="info-head">Address</p>
+                                            <p><?= $address ?> </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
