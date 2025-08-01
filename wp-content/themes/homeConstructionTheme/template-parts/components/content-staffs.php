@@ -36,7 +36,8 @@ $entries = get_posts($args)
                     <?php foreach ($entries as $entry): ?>
                         <?php
                         $staff_name = $entry->post_title;
-                        $staff_designation = get_field('staff_designation', $entry->ID);
+                        $terms = get_the_terms($entry->ID, 'designation');
+                        $staff_designation = !empty($terms) && !is_wp_error($terms) ? $terms[0]->name : '';
                         $staff_fb = get_field('facebook_link', $entry->ID);
                         $staff_twitter = get_field('twitter_link', $entry->ID);
                         $staff_ig = get_field('instagram_link', $entry->ID);

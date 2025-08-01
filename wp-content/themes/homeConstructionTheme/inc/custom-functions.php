@@ -122,3 +122,24 @@ function render_uploaded_videos($uploaded_videos) {
         }
     }
 }
+
+/**
+ * Renders staff tree
+ * @param $nodes
+ * @return void
+ */
+function render_staff_tree($nodes) {
+    echo '<ul>';
+    foreach ($nodes as $node) {
+        echo '<li>';
+        echo '<div class="box">';
+        echo '<strong>' . esc_html($node['name']) . '</strong><br>';
+        echo '<span>' . esc_html($node['designation']) . '</span>';
+        echo '</div>';
+        if (!empty($node['children'])) {
+            render_staff_tree($node['children']);
+        }
+        echo '</li>';
+    }
+    echo '</ul>';
+}
