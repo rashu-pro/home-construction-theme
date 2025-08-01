@@ -10,5 +10,5 @@
 ?>
 <div class="inner-page">
     <?php get_template_part('template-parts/components/content', 'breadcrumb') ?>
-    <?php get_template_part('template-parts/components/content', 'service-details') ?>
+    <?php get_template_part('template-parts/components/content', 'our-service-details') ?>
 </div>

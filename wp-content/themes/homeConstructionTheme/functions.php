@@ -150,7 +150,13 @@ function home_construction_theme_scripts() {
     // Enqueue only when this template part is included
     wp_enqueue_script('jquery-script', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), _S_VERSION, false);
     // bootstrap
-    wp_enqueue_script('bootstrap-script', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', array(), _S_VERSION, false);
+    wp_enqueue_script(
+        'bootstrap-bundle-js',
+        get_template_directory_uri() . '/assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js',
+        array(),
+        null,
+        true
+    );
 
     wp_enqueue_script(
         'scrolltopnotch-js',

@@ -4,7 +4,7 @@
  */
 
 $args = [
-    'post_type' => 'hhc-project',
+    'post_type' => ['hhc-our-services', 'hhc-project'],
     'posts_per_page' => -1,
     'orderby' => 'meta_value_num',
     'meta_key' => 'order',

@@ -139,7 +139,6 @@ foreach ($staff_lookup as $id => &$node) {
     }
     .box span {
         display: block;
-        font-size: 12px;
         color: #555;
         margin-top: 4px;
     }

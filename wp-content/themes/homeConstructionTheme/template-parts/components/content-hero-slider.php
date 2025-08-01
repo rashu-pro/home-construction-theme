@@ -126,14 +126,6 @@ $sliders = get_posts($args);
     </div>
 
     <?php
-    // Enqueue only when this template part is included
-    wp_enqueue_script(
-        'home-slider-script',
-        get_template_directory_uri() . '/assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js',
-        array(),
-        null,
-        true
-    );
 
     add_action('wp_footer', 'hhc_slider_video_control_script', 100);
     function hhc_slider_video_control_script() {

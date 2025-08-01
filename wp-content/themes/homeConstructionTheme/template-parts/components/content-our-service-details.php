@@ -4,6 +4,7 @@
  */
 
 $is_features = get_field('hhc_services_show_features');
+$service_intro_image = get_field('service_intro_image');
 ?>
 
     <style>
@@ -89,7 +90,7 @@ $is_features = get_field('hhc_services_show_features');
         <!-- Content Section -->
         <div class="content-section about-page-section">
             <!-- services intro -->
-            <?php if(get_the_excerpt() || $is_features['value'] || get_the_post_thumbnail(get_the_ID())): ?>
+            <?php if(get_the_excerpt() || $is_features['value'] || $service_intro_image): ?>
                 <div class="container">
                     <div class="project-details section-main">
                         <div class="row">
@@ -130,15 +131,13 @@ $is_features = get_field('hhc_services_show_features');
                                 </div>
                             <?php endif; ?>
 
-                            <div class="col-lg-6 col-md-12">
-                                <div class="project-image">
-                                    <?php
-                                    echo get_the_post_thumbnail(get_the_ID(), 'full', array(
-                                        'class' => 'img-fluid image-project'
-                                    ));
-                                    ?>
+                            <?php if($service_intro_image): ?>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="project-image">
+                                        <img src="<?= $service_intro_image['url'] ?>" alt="<?= the_title() ?>" class="img-responsive">
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -147,7 +146,7 @@ $is_features = get_field('hhc_services_show_features');
                 <hr/>
             <?php endif; ?>
 
-            <!-- Project Videos -->
+            <!-- Video Gallery -->
             <?php
             $video_gallery_section_title = rwmb_meta( 'video_gallery_section_title' );
             $youtube_videos = rwmb_meta('url_98y3p5gzwxj') ?: [];
@@ -183,7 +182,7 @@ $is_features = get_field('hhc_services_show_features');
             }
             ?>
 
-            <!-- Project Gallery -->
+            <!-- Image Gallery -->
             <?php
             $gallery_section_title = rwmb_meta( 'image_gallery_section_title' );
             $gallery_images = rwmb_meta( 'image_advanced_lwem7wozm9', [ 'size' => 'full' ] );
