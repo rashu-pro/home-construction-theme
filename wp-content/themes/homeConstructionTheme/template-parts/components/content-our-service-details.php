@@ -1,7 +1,10 @@
 <?php
 /**
- * Component to show project details
+ * Component to show service details
  */
+
+$is_features = get_field('hhc_services_show_features');
+$service_intro_image = get_field('service_intro_image');
 ?>
 
     <style>
@@ -66,9 +69,18 @@
             border-radius: 6px;
             background: #e1e1e1;
         }
+        .section-main{
+            padding: 30px 0;
+        }
+
         .video-holder{
             margin-bottom: 30px;
-        }   
+        }
+        @media (min-width: 992px){
+            .section-main{
+                padding: 50px 0;
+            }
+        }
 
         /*8 .projects-section
         ---------------------------------------*/
@@ -77,20 +89,15 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <!-- Content Section -->
         <div class="content-section about-page-section">
-            <?php
-            $is_show_intro = get_field('show_project_intro');
-            $project_intro_image = get_field('project_intro_image');
-            ?>
-            <?php if(($is_show_intro && $is_show_intro['value']) || $project_intro_image): ?>
+            <!-- services intro -->
+            <?php if(get_the_excerpt() || $is_features['value'] || $service_intro_image): ?>
                 <div class="container">
-                    <h2 class="text-center text-uppercase">Project <span class="orange-txt">Details</span></h2>
-                    <div class="border-creative text-center"><img
-                                src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt=""/>
-                    </div>
-                    <div class="project-details">
+                    <div class="project-details section-main">
                         <div class="row">
-                            <?php if($is_show_intro && $is_show_intro['value']): ?>
+                            <?php if(get_the_excerpt() || $is_features['value']): ?>
                                 <div class="col-lg-6 col-md-12">
+                                    <h1><?= the_title() ?></h1>
+                                    <p style="margin-top: 25px"><?= get_the_excerpt() ?></p>
                                     <?php
                                     the_content(
                                         sprintf(
@@ -107,66 +114,27 @@
                                         )
                                     );
                                     ?>
-                                    <ul class="no-margin no-padding">
-                                        <?php
-                                        $project_name = get_field('project_details_project_name');
-                                        $client_name = get_field('project_details_client');
-                                        $contractor = get_field('project_details_main_contractor');
-                                        $consultant = get_field('project_details_consultant');
-                                        $project_cost = get_field('project_details_project_value');
-                                        $project_location = get_field('project_details_location');
-                                        $scope_of_work = get_field('project_details_scope_of_work');
-                                        $project_details = [
-                                            [
-                                                'row_name' => 'Project',
-                                                'row_value' => $project_name,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Client',
-                                                'row_value' => $client_name,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Main Contractor',
-                                                'row_value' => $contractor,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Consultant',
-                                                'row_value' => $consultant,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Project Value',
-                                                'row_value' => $project_cost,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Location',
-                                                'row_value' => $project_location,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ],
-                                            [
-                                                'row_name' => 'Scope of work',
-                                                'row_value' => $scope_of_work,
-                                                'row_icon_class' => 'fa fa-bar-chart'
-                                            ]
-                                        ];
 
-                                        foreach ($project_details as $detail) {
-                                            if (empty($detail['row_value'])) continue;
-                                            echo '<li><span class="orange-txt">' . $detail['row_name'] . ' :</span> ' . $detail['row_value'] . '</li>';
-                                        }
-                                        ?>
-                                    </ul>
+                                    <?php if(($is_features && $is_features['value']) || $is_features === null): ?>
+                                        <div>
+                                            <h2>Features</h2>
+                                            <ul>
+                                                <?php
+                                                for($i = 1; $i <= 6; $i++){
+                                                    $feature = get_field('feature_hhc_service_'.$i);
+                                                    echo '<li>'.$feature.'</li>';
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
 
-                            <?php if($project_intro_image): ?>
+                            <?php if($service_intro_image): ?>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="project-image">
-                                        <img src="<?= $project_intro_image['url'] ?>" alt="<?= the_title() ?>" class="img-responsive">
+                                        <img src="<?= $service_intro_image['url'] ?>" alt="<?= the_title() ?>" class="img-responsive">
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -264,7 +232,7 @@
                     the_post_navigation(
                         array(
                             'prev_text' => '<span class="nav-subtitle ">' . esc_html__('< Previous:', 'home-construction-theme') . '</span> <span class="nav-title">%title</span>',
-                            'next_text' => '<span class="nav-subtitle">' . esc_html__('< Next:', 'home-construction-theme') . '</span> <span class="nav-title">%title</span>',
+                            'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'home-construction-theme') . '</span> <span class="nav-title">%title ></span>',
                         )
                     );
                     ?>

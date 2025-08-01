@@ -36,7 +36,8 @@ $entries = get_posts($args)
                     <?php foreach ($entries as $entry): ?>
                         <?php
                         $staff_name = $entry->post_title;
-                        $staff_designation = get_field('staff_designation', $entry->ID);
+                        $terms = get_the_terms($entry->ID, 'designation');
+                        $staff_designation = !empty($terms) && !is_wp_error($terms) ? $terms[0]->name : '';
                         $staff_fb = get_field('facebook_link', $entry->ID);
                         $staff_twitter = get_field('twitter_link', $entry->ID);
                         $staff_ig = get_field('instagram_link', $entry->ID);
@@ -45,18 +46,18 @@ $entries = get_posts($args)
                         ?>
                         <div class="item">
                             <div class="">
-                                <div class="hexagon hexagon1">
-                                    <div class="hexagon-in1">
-                                        <div class="hexagon-in2"
-                                            <?php if ($staff_profile_picture): ?>
-                                                style="background:url(<?php echo $staff_profile_picture ?>) no-repeat;"
-                                            <?php endif; ?>
-                                        >
-
+                                <?php if ($staff_profile_picture): ?>
+                                    <div class="hexagon hexagon1">
+                                        <div class="hexagon-in1">
+                                            <div class="hexagon-in2" style="background:url(<?php echo $staff_profile_picture ?>) no-repeat;"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="staff-desc text-center">
+                                <?php endif; ?>
+                                <div class="staff-desc text-center"
+                                     <?php if(!$staff_profile_picture): ?>
+                                     style="padding-top: 20px;"
+                                     <?php endif; ?>
+                                >
                                     <h5><?php echo $staff_name ?></h5>
                                     <?php if ($staff_designation): ?>
                                         <p><?php echo $staff_designation ?></p>
