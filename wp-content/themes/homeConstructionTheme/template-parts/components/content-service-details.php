@@ -88,62 +88,68 @@ $is_features = get_field('hhc_services_show_features');
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <!-- Content Section -->
         <div class="content-section about-page-section">
-            <div class="container">
-                <div class="project-details section-main">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <h1><?= the_title() ?></h1>
-                            <p style="margin-top: 25px"><?= get_the_excerpt() ?></p>
-                            <?php
-                            the_content(
-                                sprintf(
-                                    wp_kses(
-                                    /* translators: %s: Name of current post. Only visible to screen readers */
-                                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'home-construction-theme'),
-                                        array(
-                                            'span' => array(
-                                                'class' => array(),
+            <!-- services intro -->
+            <?php if(get_the_excerpt() || $is_features['value'] || get_the_post_thumbnail(get_the_ID())): ?>
+                <div class="container">
+                    <div class="project-details section-main">
+                        <div class="row">
+                            <?php if(get_the_excerpt() || $is_features['value']): ?>
+                                <div class="col-lg-6 col-md-12">
+                                    <h1><?= the_title() ?></h1>
+                                    <p style="margin-top: 25px"><?= get_the_excerpt() ?></p>
+                                    <?php
+                                    the_content(
+                                        sprintf(
+                                            wp_kses(
+                                            /* translators: %s: Name of current post. Only visible to screen readers */
+                                                __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'home-construction-theme'),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
                                             ),
+                                            wp_kses_post(get_the_title())
                                         )
-                                    ),
-                                    wp_kses_post(get_the_title())
-                                )
-                            );
-                            ?>
+                                    );
+                                    ?>
 
-                            <?php if(($is_features && $is_features['value']) || $is_features === null): ?>
-                                <div>
-                                    <h2>Features</h2>
-                                    <ul>
-                                        <?php
-                                        for($i = 1; $i <= 6; $i++){
-                                            $feature = get_field('feature_hhc_service_'.$i);
-                                            echo '<li>'.$feature.'</li>';
-                                        }
-                                        ?>
-                                    </ul>
+                                    <?php if(($is_features && $is_features['value']) || $is_features === null): ?>
+                                        <div>
+                                            <h2>Features</h2>
+                                            <ul>
+                                                <?php
+                                                for($i = 1; $i <= 6; $i++){
+                                                    $feature = get_field('feature_hhc_service_'.$i);
+                                                    echo '<li>'.$feature.'</li>';
+                                                }
+                                                ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
-                        </div>
 
-                        <div class="col-lg-6 col-md-12">
-                            <div class="project-image">
-                                <?php
-                                echo get_the_post_thumbnail(get_the_ID(), 'full', array(
-                                    'class' => 'img-fluid image-project'
-                                ));
-                                ?>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="project-image">
+                                    <?php
+                                    echo get_the_post_thumbnail(get_the_ID(), 'full', array(
+                                        'class' => 'img-fluid image-project'
+                                    ));
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
 
-            <hr/>
+                <hr/>
+            <?php endif; ?>
 
             <!-- Project Videos -->
             <?php
+            $video_gallery_section_title = rwmb_meta( 'video_gallery_section_title' );
             $youtube_videos = rwmb_meta('url_98y3p5gzwxj') ?: [];
             $uploaded_videos = rwmb_meta( 'video_x14dg8khzw' ) ?? [];
             $is_youtube_video_on_top = rwmb_meta('is_youtube_video_on_top');
@@ -151,10 +157,12 @@ $is_features = get_field('hhc_services_show_features');
                 ?>
                 <div class="project-gallery content-section">
                     <div class="heading boder2 text-center">
-                        <h2 class="text-center text-uppercase"><span class="orange-txt">Videos</span></h2>
-                        <div class="border-creative text-center"><img
-                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt="">
-                        </div>
+                        <?php if($video_gallery_section_title): ?>
+                            <h2 class="text-center text-uppercase"><span class="orange-txt"><?= $video_gallery_section_title ?></span></h2>
+                            <div class="border-creative text-center"><img
+                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt="">
+                            </div>
+                        <?php endif; ?>
 
                         <div class="container">
                             <div class="row mb-30">
@@ -177,15 +185,18 @@ $is_features = get_field('hhc_services_show_features');
 
             <!-- Project Gallery -->
             <?php
+            $gallery_section_title = rwmb_meta( 'image_gallery_section_title' );
             $gallery_images = rwmb_meta( 'image_advanced_lwem7wozm9', [ 'size' => 'full' ] );
             if(!empty($gallery_images)){
                 ?>
                 <div class="project-gallery content-section">
                     <div class="heading boder2 text-center">
-                        <h2 class="text-center text-uppercase"><span class="orange-txt">Gallery</span></h2>
-                        <div class="border-creative text-center"><img
-                                    src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt="">
-                        </div>
+                        <?php if($gallery_section_title): ?>
+                            <h2 class="text-center text-uppercase"><span class="orange-txt"><?= $gallery_section_title ?></span></h2>
+                            <div class="border-creative text-center"><img
+                                        src="<?php echo get_template_directory_uri() ?>/assets/imgs/borders/border.png" alt="">
+                            </div>
+                        <?php endif; ?>
 
                         <div class="container">
                             <div class="row mb-30">
