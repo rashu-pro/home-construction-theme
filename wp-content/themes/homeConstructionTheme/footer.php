@@ -59,44 +59,50 @@
 <footer id="colophon" class="site-footer">
     <!-- footer -->
     <div class="footer">
-        <div class="newsletter wow fadeInUp" data-wow-duration="900ms" data-wow-delay="100ms">
-            <div class="container">
-                <?php
-                $address = Redux::get_option('hhc_redux_options', 'hhc_contact_details_address');
-                $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
-                $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
-                ?>
-                <div class="col-xs-12 col-md-4 address footer-address">
-                    <div class="col-xs-2"><i class="flaticon-placeholder"></i></div>
-                    <div class="nws-txt no-padding">
-                        <h5>Location : </h5>
-                        <?php echo $address ?>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="col-xs-12 col-md-8 phone-div">
-                    <div class="col-xs-12 col-md-6 footer-phone">
-                        <div class="col-xs-2"><i class="flaticon-technology"></i></div>
+        <?php if(wp_is_mobile()): ?>
+            <div class="newsletter wow fadeInUp" data-wow-duration="900ms" data-wow-delay="100ms">
+                <div class="container">
+                    <?php
+                    $address = Redux::get_option('hhc_redux_options', 'hhc_contact_details_address');
+                    $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
+                    $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
+                    ?>
+                    <div class="col-xs-12 col-md-4 address footer-address">
+                        <div class="col-xs-2"><i class="flaticon-placeholder"></i></div>
                         <div class="nws-txt no-padding">
-                            <h5>Phone : </h5>
-                            <p><a href="tel:<?php echo $phone ?>"><?php echo $phone ?></a></p>
+                            <h5>Location : </h5>
+                            <?php echo $address ?>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-xs-12 col-md-6 pull-right footer-email">
-                        <div class="col-xs-2"><i class="flaticon-email"></i></div>
-                        <div class="nws-txt no-padding">
-                            <h5>Mail Us : </h5>
-                            <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
+                    <div class="col-xs-12 col-md-8 phone-div">
+                        <div class="col-xs-12 col-md-6 footer-phone">
+                            <div class="col-xs-2"><i class="flaticon-technology"></i></div>
+                            <div class="nws-txt no-padding">
+                                <h5>Phone : </h5>
+                                <p><a href="tel:<?php echo $phone ?>"><?php echo $phone ?></a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 pull-right footer-email">
+                            <div class="col-xs-2"><i class="flaticon-email"></i></div>
+                            <div class="nws-txt no-padding">
+                                <h5>Mail Us : </h5>
+                                <p><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></p>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
             </div>
-        </div>
-        <div class="footer-container">
+        <?php endif; ?>
+        <div class="footer-container"
+             <?php if(!wp_is_mobile()): ?>
+             style="padding-top: 50px;"
+             <?php endif; ?>
+        >
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 wow fadeIn" data-wow-duration="900ms" data-wow-delay="150ms">
