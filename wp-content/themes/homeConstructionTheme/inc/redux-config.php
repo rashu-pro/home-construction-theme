@@ -294,6 +294,12 @@ $section = array(
             'type' => 'text',
             'title' => __('Phone Number'),
         ),
+
+        array(
+            'id' => 'hhc_contact_details_po_box',
+            'type' => 'text',
+            'title' => __('PO. BOX'),
+        ),
     ),
 );
 Redux::set_section($opt_name, $section);

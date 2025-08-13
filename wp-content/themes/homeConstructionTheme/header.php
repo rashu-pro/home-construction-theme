@@ -122,7 +122,7 @@
         <div class="top-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <div class="pull-left"><a href="<?php echo esc_url(home_url('/')) ?>" title="Home"><img
                                         src="<?php echo get_template_directory_uri() ?>/assets/imgs/logo-hhc.png" class="logo1"
                                         title="" alt=""/> </a>
@@ -130,16 +130,17 @@
                     </div>
 
                     <?php if(!wp_is_mobile()): ?>
-                        <div class="col-sm-9">
+                        <div class="col-sm-10">
                             <div class="">
                                 <div class="contact-top">
                                     <?php
                                     $address = Redux::get_option('hhc_redux_options', 'hhc_contact_details_address');
                                     $phone = Redux::get_option('hhc_redux_options', 'hhc_contact_details_phone');
                                     $email = Redux::get_option('hhc_redux_options', 'hhc_contact_details_email');
+                                    $po_box = Redux::get_option('hhc_redux_options', 'hhc_contact_details_po_box');
                                     ?>
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-3">
                                             <div class="row">
                                                 <div class="col-xs-2">
                                                 <span class="head-icon">
@@ -153,7 +154,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-3">
                                             <div class="col-xs-2">
                                             <span class="head-icon">
                                                     <i class="flaticon-technology"></i>
@@ -165,7 +166,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-3">
                                             <div class="col-xs-2">
                                             <span class="head-icon">
                                                     <i class="flaticon-placeholder"></i>
@@ -174,6 +175,18 @@
                                             <div class="col-xs-10">
                                                 <p class="info-head">Address</p>
                                                 <p><?= $address ?> </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="col-xs-2">
+                                            <span class="head-icon">
+                                                    <img src="<?= get_template_directory_uri() ?>/assets/img/mailbox.png" alt="po box" />
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-10">
+                                                <p class="info-head">PO. BOX</p>
+                                                <p><?= $po_box ?> </p>
                                             </div>
                                         </div>
                                     </div>
