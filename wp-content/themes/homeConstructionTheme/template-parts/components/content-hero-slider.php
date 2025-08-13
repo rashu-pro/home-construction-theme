@@ -59,13 +59,14 @@ $sliders = get_posts($args);
         .carousel-caption h1{
             margin-bottom: 50px;
         }
+
+        .hero-slider-item video{
+            position: absolute;
+            height: 100%;
+        }
         @media (max-width: 1199px){
             .hero-slider-item{
                 height: auto;
-            }
-            .hero-slider-item video{
-                position: absolute;
-                height: 100%;
             }
         }
         @media (max-width: 767px){
