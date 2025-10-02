@@ -25,4 +25,3 @@ wp_enqueue_script(
     true
 );
 ?>
-
